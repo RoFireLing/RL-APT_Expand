@@ -1,0 +1,30 @@
+id: 0
+Fmeasure: 113.0;F2measure: 168.0
+Tmeasure: 127386.67;T2measure: 120513.33
+id: 1
+Fmeasure: 91.0;F2measure: 154.0
+Tmeasure: 80036.67;T2measure: 79710.0
+id: 2
+Fmeasure: 115.0;F2measure: 218.0
+Tmeasure: 76583.33;T2measure: 90523.33
+id: 3
+Fmeasure: 117.0;F2measure: 173.0
+Tmeasure: 67960.0;T2measure: 57516.67
+id: 4
+Fmeasure: 119.0;F2measure: 127.0
+Tmeasure: 65010.0;T2measure: 45070.0
+id: 5
+Fmeasure: 95.0;F2measure: 158.0
+Tmeasure: 68883.33;T2measure: 58416.67
+id: 6
+Fmeasure: 96.0;F2measure: 199.0
+Tmeasure: 77830.0;T2measure: 105123.33
+id: 7
+Fmeasure: 107.0;F2measure: 121.0
+Tmeasure: 58423.33;T2measure: 49273.33
+id: 8
+Fmeasure: 97.0;F2measure: 218.0
+Tmeasure: 86406.67;T2measure: 116263.33
+id: 9
+Fmeasure: 89.0;F2measure: 242.0
+Tmeasure: 76806.67;T2measure: 158543.33
