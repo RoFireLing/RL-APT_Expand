@@ -1,4 +1,4 @@
-package TestcaseInfo;
+package Testcase_Info;
 
 import GenerateTestSuit.generate;
 import GenerateTestSuit.get_fault_matrix;
@@ -27,7 +27,7 @@ public class get_testcase_info {
         get_fault_matrix gfm = new get_fault_matrix();
         gfm.get_fm(tc, program_name, version);
 
-        String path = System.getProperty("user.dir") + separator + "src" + separator + "TestcaseInfo" + separator + program_name + separator + program_name + "_" + version;
+        String path = System.getProperty("user.dir") + separator + "src" + separator + "Testcase_Info" + separator + program_name + separator + program_name + "_" + version;
         File file = new File(path);
         PrintWriter printWriter = null;
 
@@ -50,10 +50,10 @@ public class get_testcase_info {
         String[] program_name = {"Grep", "Gzip", "Make"};
         for (String s : program_name) {
             if (s == "Grep") {
-//                String[] version = {"v1", "v2", "v3", "v4"};
-//                for (String v : version) {
-//                    record_tc_info(s, v);
-//                }
+                String[] version = {"v1", "v2", "v3", "v4"};
+                for (String v : version) {
+                    record_tc_info(s, v);
+                }
             } else if (s == "Gzip") {
 //                String[] version = {"v1","v2","v4","v5"};
 //                for (String v : version) {

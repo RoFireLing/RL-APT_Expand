@@ -24,8 +24,8 @@ public class testcase {
         return "testcase{" +
                 "test_no=" + test_no +
                 ", content='" + content + '\'' +
-                ", partition_no=" + partition +
-                ", mutant_no=" + killableMutants +
+                ", partition=" + partition +
+                ", killableMutants=" + killableMutants +
                 '}';
     }
 

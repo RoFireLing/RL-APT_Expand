@@ -1,4 +1,4 @@
-package Excuter;
+package Executor;
 
 import Constant.constant;
 import GenerateTestSuit.generate;
@@ -94,7 +94,7 @@ public class rlapt_q implements test {
                     partitionIndex = nextPartitionIndex;
                 }
 
-                //select the next partition
+                // select the next partition
                 nextPartitionIndex = rlaptq.nextPartition4RLAPT(partitionIndex, counter);
 
                 // select test case

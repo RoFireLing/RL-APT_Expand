@@ -1,0 +1,793 @@
+testcase{test_no=0, content='-P [-C sdir]', partition=7, killableMutants=[]}
+testcase{test_no=1, content='-P [-C sdir]', partition=7, killableMutants=[10]}
+testcase{test_no=2, content='-P [-C sdir -C baddirectory]', partition=7, killableMutants=[]}
+testcase{test_no=3, content='-P [-C sdir -C sdir]', partition=7, killableMutants=[10, 15]}
+testcase{test_no=4, content='-P []', partition=7, killableMutants=[10]}
+testcase{test_no=5, content='-P [-f ../../inputs/makefilenoexist]', partition=7, killableMutants=[10]}
+testcase{test_no=6, content='-P [-f ../../inputs/makefile-bad]', partition=7, killableMutants=[]}
+testcase{test_no=7, content='-P [-I ./baddirectory]', partition=7, killableMutants=[10, 13]}
+testcase{test_no=8, content='-P [-I ./headers]', partition=7, killableMutants=[10, 13]}
+testcase{test_no=9, content='-P [-I./headers]', partition=7, killableMutants=[10, 13]}
+testcase{test_no=10, content='-P [-I ./headers1/baddirectory]', partition=7, killableMutants=[10, 13]}
+testcase{test_no=11, content='-P [-I ./headers1/headers2]', partition=7, killableMutants=[10, 13]}
+testcase{test_no=12, content='-P [-W hello.c -n]', partition=7, killableMutants=[10, 15]}
+testcase{test_no=13, content='-P [-o badfile.c]', partition=7, killableMutants=[10]}
+testcase{test_no=14, content='-P [-o hello.c]', partition=7, killableMutants=[10]}
+testcase{test_no=15, content='-P [-p -f/dev/null]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=16, content='-P [-q]', partition=7, killableMutants=[]}
+testcase{test_no=17, content='-P [-r]', partition=7, killableMutants=[10]}
+testcase{test_no=18, content='-P [-t]', partition=7, killableMutants=[10]}
+testcase{test_no=19, content='-P [-v]', partition=7, killableMutants=[]}
+testcase{test_no=20, content='-P [-W badfile.c]', partition=7, killableMutants=[10]}
+testcase{test_no=21, content='-P [-W hello.c]', partition=7, killableMutants=[10, 15]}
+testcase{test_no=22, content='-P []', partition=7, killableMutants=[10]}
+testcase{test_no=23, content='-P []', partition=7, killableMutants=[10]}
+testcase{test_no=24, content='-P [-f ../../inputs/makefile-bad]', partition=7, killableMutants=[]}
+testcase{test_no=25, content='-P [-f ../../inputs/makefile-1a]', partition=7, killableMutants=[10]}
+testcase{test_no=26, content='-P [-f ../../inputs/makefile-1a]', partition=7, killableMutants=[10]}
+testcase{test_no=27, content='-P [-f ../../inputs/makefile-2a]', partition=7, killableMutants=[10]}
+testcase{test_no=28, content='-P [-f ../../inputs/makefile-2a]', partition=7, killableMutants=[10]}
+testcase{test_no=29, content='-P [-f ../../inputs/makefile-1a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=30, content='-P [-f ../../inputs/makefile-1a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=31, content='-P [-f ../../inputs/makefile-2a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=32, content='-P [-f ../../inputs/makefile-2a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=33, content='-P [-f ../../inputs/makefile-1a -s]', partition=5, killableMutants=[]}
+testcase{test_no=34, content='-P [-f ../../inputs/makefile-1a -s]', partition=5, killableMutants=[]}
+testcase{test_no=35, content='-P [-f ../../inputs/makefile-2a -s]', partition=5, killableMutants=[]}
+testcase{test_no=36, content='-P [-f ../../inputs/makefile-2a -s]', partition=5, killableMutants=[]}
+testcase{test_no=37, content='-P [-f ../../inputs/makefile-1a -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=38, content='-P [-f ../../inputs/makefile-1a -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=39, content='-P [-f ../../inputs/makefile-2a -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=40, content='-P [-f ../../inputs/makefile-2a -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=41, content='-P [-f ../../inputs/makefile-1a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=42, content='-P [-f ../../inputs/makefile-1a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=43, content='-P [-f ../../inputs/makefile-2a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=44, content='-P [-f ../../inputs/makefile-2a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=45, content='-P [-f ../../inputs/makefile-1a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=46, content='-P [-f ../../inputs/makefile-1a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=47, content='-P [-f ../../inputs/makefile-2a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=48, content='-P [-f ../../inputs/makefile-2a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=49, content='-P [-f ../../inputs/makefile-1a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=50, content='-P [-f ../../inputs/makefile-1a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=51, content='-P [-f ../../inputs/makefile-2a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=52, content='-P [-f ../../inputs/makefile-2a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=53, content='-P [-f ../../inputs/makefile-1a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=54, content='-P [-f ../../inputs/makefile-1a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=55, content='-P [-f ../../inputs/makefile-2a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=56, content='-P [-f ../../inputs/makefile-2a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=57, content='-P [-f ../../inputs/makefile-1a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=58, content='-P [-f ../../inputs/makefile-1a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=59, content='-P [-f ../../inputs/makefile-2a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=60, content='-P [-f ../../inputs/makefile-2a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=61, content='-P [-f ../../inputs/makefile-1a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=62, content='-P [-f ../../inputs/makefile-1a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=63, content='-P [-f ../../inputs/makefile-2a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=64, content='-P [-f ../../inputs/makefile-2a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=65, content='-P [-f ../../inputs/makefile-1a -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=66, content='-P [-f ../../inputs/makefile-1a -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=67, content='-P [-f ../../inputs/makefile-2a -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=68, content='-P [-f ../../inputs/makefile-2a -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=69, content='-P [-f ../../inputs/makefile-1a -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=70, content='-P [-f ../../inputs/makefile-1a -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=71, content='-P [-f ../../inputs/makefile-2a -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=72, content='-P [-f ../../inputs/makefile-2a -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=73, content='-P [-f ../../inputs/makefile-1a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=74, content='-P [-f ../../inputs/makefile-1a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=75, content='-P [-f ../../inputs/makefile-2a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=76, content='-P [-f ../../inputs/makefile-2a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=77, content='-P [-f ../../inputs/makefile-1a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=78, content='-P [-f ../../inputs/makefile-1a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=79, content='-P [-f ../../inputs/makefile-2a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=80, content='-P [-f ../../inputs/makefile-2a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=81, content='-P [-f ../../inputs/makefile-1a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=82, content='-P [-f ../../inputs/makefile-1a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=83, content='-P [-f ../../inputs/makefile-2a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=84, content='-P [-f ../../inputs/makefile-2a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=85, content='-P [-f ../../inputs/makefile-1a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=86, content='-P [-f ../../inputs/makefile-1a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=87, content='-P [-f ../../inputs/makefile-2a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=88, content='-P [-f ../../inputs/makefile-2a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=89, content='-P [-f ../../inputs/makefile-1a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=90, content='-P [-f ../../inputs/makefile-1a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=91, content='-P [-f ../../inputs/makefile-2a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=92, content='-P [-f ../../inputs/makefile-2a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=93, content='-P [-f ../../inputs/makefile-1a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=94, content='-P [-f ../../inputs/makefile-1a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=95, content='-P [-f ../../inputs/makefile-2a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=96, content='-P [-f ../../inputs/makefile-2a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=97, content='-P [-f ../../inputs/makefile-1a -k -s]', partition=5, killableMutants=[]}
+testcase{test_no=98, content='-P [-f ../../inputs/makefile-1a -k -s]', partition=5, killableMutants=[]}
+testcase{test_no=99, content='-P [-f ../../inputs/makefile-2a -k -s]', partition=5, killableMutants=[]}
+testcase{test_no=100, content='-P [-f ../../inputs/makefile-2a -k -s]', partition=5, killableMutants=[]}
+testcase{test_no=101, content='-P [-f ../../inputs/makefile-1a -k -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=102, content='-P [-f ../../inputs/makefile-1a -k -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=103, content='-P [-f ../../inputs/makefile-2a -k -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=104, content='-P [-f ../../inputs/makefile-2a -k -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=105, content='-P [-f ../../inputs/makefile-1a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=106, content='-P [-f ../../inputs/makefile-1a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=107, content='-P [-f ../../inputs/makefile-2a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=108, content='-P [-f ../../inputs/makefile-2a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=109, content='-P [-f ../../inputs/makefile-1a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=110, content='-P [-f ../../inputs/makefile-1a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=111, content='-P [-f ../../inputs/makefile-2a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=112, content='-P [-f ../../inputs/makefile-2a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=113, content='-P [-f ../../inputs/makefile-1a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=114, content='-P [-f ../../inputs/makefile-1a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=115, content='-P [-f ../../inputs/makefile-2a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=116, content='-P [-f ../../inputs/makefile-2a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=117, content='-P [-f ../../inputs/makefile-1a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=118, content='-P [-f ../../inputs/makefile-1a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=119, content='-P [-f ../../inputs/makefile-2a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=120, content='-P [-f ../../inputs/makefile-2a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=121, content='-P [-f ../../inputs/makefile-1a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=122, content='-P [-f ../../inputs/makefile-1a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=123, content='-P [-f ../../inputs/makefile-2a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=124, content='-P [-f ../../inputs/makefile-2a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=125, content='-P [-f ../../inputs/makefile-1a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=126, content='-P [-f ../../inputs/makefile-1a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=127, content='-P [-f ../../inputs/makefile-2a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=128, content='-P [-f ../../inputs/makefile-2a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=129, content='-P [-f ../../inputs/makefile-1a -k -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=130, content='-P [-f ../../inputs/makefile-1a -k -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=131, content='-P [-f ../../inputs/makefile-2a -k -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=132, content='-P [-f ../../inputs/makefile-2a -k -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=133, content='-P [-f ../../inputs/makefile-1a -k -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=134, content='-P [-f ../../inputs/makefile-1a -k -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=135, content='-P [-f ../../inputs/makefile-2a -k -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=136, content='-P [-f ../../inputs/makefile-2a -k -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=137, content='-P [-f ../../inputs/makefile-1a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=138, content='-P [-f ../../inputs/makefile-1a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=139, content='-P [-f ../../inputs/makefile-2a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=140, content='-P [-f ../../inputs/makefile-2a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=141, content='-P [-f ../../inputs/makefile-1a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=142, content='-P [-f ../../inputs/makefile-1a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=143, content='-P [-f ../../inputs/makefile-2a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=144, content='-P [-f ../../inputs/makefile-2a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=145, content='-P [-f ../../inputs/makefile-1a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=146, content='-P [-f ../../inputs/makefile-1a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=147, content='-P [-f ../../inputs/makefile-2a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=148, content='-P [-f ../../inputs/makefile-2a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=149, content='-P [-f ../../inputs/makefile-1a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=150, content='-P [-f ../../inputs/makefile-1a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=151, content='-P [-f ../../inputs/makefile-2a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=152, content='-P [-f ../../inputs/makefile-2a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=153, content='-P [-f ../../inputs/makefile-1a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=154, content='-P [-f ../../inputs/makefile-1a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=155, content='-P [-f ../../inputs/makefile-2a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=156, content='-P [-f ../../inputs/makefile-2a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=157, content='-P [-f ../../inputs/makefile-1a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=158, content='-P [-f ../../inputs/makefile-1a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=159, content='-P [-f ../../inputs/makefile-2a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=160, content='-P [-f ../../inputs/makefile-2a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=161, content='-P [-f ../../inputs/makefile-1a -i -s]', partition=4, killableMutants=[]}
+testcase{test_no=162, content='-P [-f ../../inputs/makefile-1a -i -s]', partition=4, killableMutants=[]}
+testcase{test_no=163, content='-P [-f ../../inputs/makefile-2a -i -s]', partition=4, killableMutants=[]}
+testcase{test_no=164, content='-P [-f ../../inputs/makefile-2a -i -s]', partition=4, killableMutants=[]}
+testcase{test_no=165, content='-P [-f ../../inputs/makefile-1a -i -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=166, content='-P [-f ../../inputs/makefile-1a -i -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=167, content='-P [-f ../../inputs/makefile-2a -i -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=168, content='-P [-f ../../inputs/makefile-2a -i -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=169, content='-P [-f ../../inputs/makefile-1a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=170, content='-P [-f ../../inputs/makefile-1a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=171, content='-P [-f ../../inputs/makefile-2a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=172, content='-P [-f ../../inputs/makefile-2a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=173, content='-P [-f ../../inputs/makefile-1a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=174, content='-P [-f ../../inputs/makefile-1a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=175, content='-P [-f ../../inputs/makefile-2a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=176, content='-P [-f ../../inputs/makefile-2a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=177, content='-P [-f ../../inputs/makefile-1a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=178, content='-P [-f ../../inputs/makefile-1a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=179, content='-P [-f ../../inputs/makefile-2a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=180, content='-P [-f ../../inputs/makefile-2a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=181, content='-P [-f ../../inputs/makefile-1a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=182, content='-P [-f ../../inputs/makefile-1a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=183, content='-P [-f ../../inputs/makefile-2a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=184, content='-P [-f ../../inputs/makefile-2a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=185, content='-P [-f ../../inputs/makefile-1a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=186, content='-P [-f ../../inputs/makefile-1a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=187, content='-P [-f ../../inputs/makefile-2a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=188, content='-P [-f ../../inputs/makefile-2a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=189, content='-P [-f ../../inputs/makefile-1a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=190, content='-P [-f ../../inputs/makefile-1a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=191, content='-P [-f ../../inputs/makefile-2a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=192, content='-P [-f ../../inputs/makefile-2a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=193, content='-P [-f ../../inputs/makefile-1a -i -n -s]', partition=4, killableMutants=[]}
+testcase{test_no=194, content='-P [-f ../../inputs/makefile-1a -i -n -s]', partition=4, killableMutants=[]}
+testcase{test_no=195, content='-P [-f ../../inputs/makefile-2a -i -n -s]', partition=4, killableMutants=[]}
+testcase{test_no=196, content='-P [-f ../../inputs/makefile-2a -i -n -s]', partition=4, killableMutants=[]}
+testcase{test_no=197, content='-P [-f ../../inputs/makefile-1a -i -n -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=198, content='-P [-f ../../inputs/makefile-1a -i -n -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=199, content='-P [-f ../../inputs/makefile-2a -i -n -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=200, content='-P [-f ../../inputs/makefile-2a -i -n -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=201, content='-P [-f ../../inputs/makefile-1a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=202, content='-P [-f ../../inputs/makefile-1a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=203, content='-P [-f ../../inputs/makefile-2a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=204, content='-P [-f ../../inputs/makefile-2a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=205, content='-P [-f ../../inputs/makefile-1a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=206, content='-P [-f ../../inputs/makefile-1a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=207, content='-P [-f ../../inputs/makefile-2a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=208, content='-P [-f ../../inputs/makefile-2a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=209, content='-P [-f ../../inputs/makefile-1a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=210, content='-P [-f ../../inputs/makefile-1a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=211, content='-P [-f ../../inputs/makefile-2a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=212, content='-P [-f ../../inputs/makefile-2a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=213, content='-P [-f ../../inputs/makefile-1a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=214, content='-P [-f ../../inputs/makefile-1a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=215, content='-P [-f ../../inputs/makefile-2a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=216, content='-P [-f ../../inputs/makefile-2a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=217, content='-P [-e -f ../../inputs/makefile-1a]', partition=7, killableMutants=[10]}
+testcase{test_no=218, content='-P [-e -f ../../inputs/makefile-1a]', partition=7, killableMutants=[10]}
+testcase{test_no=219, content='-P [-e -f ../../inputs/makefile-2a]', partition=7, killableMutants=[10]}
+testcase{test_no=220, content='-P [-e -f ../../inputs/makefile-2a]', partition=7, killableMutants=[10]}
+testcase{test_no=221, content='-P [-e -f ../../inputs/makefile-1a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=222, content='-P [-e -f ../../inputs/makefile-1a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=223, content='-P [-e -f ../../inputs/makefile-2a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=224, content='-P [-e -f ../../inputs/makefile-2a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=225, content='-P [-e -f ../../inputs/makefile-1a -s]', partition=5, killableMutants=[]}
+testcase{test_no=226, content='-P [-e -f ../../inputs/makefile-1a -s]', partition=5, killableMutants=[]}
+testcase{test_no=227, content='-P [-e -f ../../inputs/makefile-2a -s]', partition=5, killableMutants=[]}
+testcase{test_no=228, content='-P [-e -f ../../inputs/makefile-2a -s]', partition=5, killableMutants=[]}
+testcase{test_no=229, content='-P [-e -f ../../inputs/makefile-1a -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=230, content='-P [-e -f ../../inputs/makefile-1a -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=231, content='-P [-e -f ../../inputs/makefile-2a -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=232, content='-P [-e -f ../../inputs/makefile-2a -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=233, content='-P [-e -f ../../inputs/makefile-1a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=234, content='-P [-e -f ../../inputs/makefile-1a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=235, content='-P [-e -f ../../inputs/makefile-2a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=236, content='-P [-e -f ../../inputs/makefile-2a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=237, content='-P [-e -f ../../inputs/makefile-1a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=238, content='-P [-e -f ../../inputs/makefile-1a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=239, content='-P [-e -f ../../inputs/makefile-2a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=240, content='-P [-e -f ../../inputs/makefile-2a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=241, content='-P [-e -f ../../inputs/makefile-1a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=242, content='-P [-e -f ../../inputs/makefile-1a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=243, content='-P [-e -f ../../inputs/makefile-2a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=244, content='-P [-e -f ../../inputs/makefile-2a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=245, content='-P [-e -f ../../inputs/makefile-1a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=246, content='-P [-e -f ../../inputs/makefile-1a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=247, content='-P [-e -f ../../inputs/makefile-2a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=248, content='-P [-e -f ../../inputs/makefile-2a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=249, content='-P [-e -f ../../inputs/makefile-1a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=250, content='-P [-e -f ../../inputs/makefile-1a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=251, content='-P [-e -f ../../inputs/makefile-2a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=252, content='-P [-e -f ../../inputs/makefile-2a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=253, content='-P [-e -f ../../inputs/makefile-1a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=254, content='-P [-e -f ../../inputs/makefile-1a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=255, content='-P [-e -f ../../inputs/makefile-2a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=256, content='-P [-e -f ../../inputs/makefile-2a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=257, content='-P [-e -f ../../inputs/makefile-1a -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=258, content='-P [-e -f ../../inputs/makefile-1a -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=259, content='-P [-e -f ../../inputs/makefile-2a -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=260, content='-P [-e -f ../../inputs/makefile-2a -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=261, content='-P [-e -f ../../inputs/makefile-1a -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=262, content='-P [-e -f ../../inputs/makefile-1a -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=263, content='-P [-e -f ../../inputs/makefile-2a -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=264, content='-P [-e -f ../../inputs/makefile-2a -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=265, content='-P [-e -f ../../inputs/makefile-1a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=266, content='-P [-e -f ../../inputs/makefile-1a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=267, content='-P [-e -f ../../inputs/makefile-2a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=268, content='-P [-e -f ../../inputs/makefile-2a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=269, content='-P [-e -f ../../inputs/makefile-1a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=270, content='-P [-e -f ../../inputs/makefile-1a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=271, content='-P [-e -f ../../inputs/makefile-2a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=272, content='-P [-e -f ../../inputs/makefile-2a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=273, content='-P [-e -f ../../inputs/makefile-1a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=274, content='-P [-e -f ../../inputs/makefile-1a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=275, content='-P [-e -f ../../inputs/makefile-2a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=276, content='-P [-e -f ../../inputs/makefile-2a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=277, content='-P [-e -f ../../inputs/makefile-1a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=278, content='-P [-e -f ../../inputs/makefile-1a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=279, content='-P [-e -f ../../inputs/makefile-2a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=280, content='-P [-e -f ../../inputs/makefile-2a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=281, content='-P [-e -f ../../inputs/makefile-1a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=282, content='-P [-e -f ../../inputs/makefile-1a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=283, content='-P [-e -f ../../inputs/makefile-2a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=284, content='-P [-e -f ../../inputs/makefile-2a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=285, content='-P [-e -f ../../inputs/makefile-1a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=286, content='-P [-e -f ../../inputs/makefile-1a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=287, content='-P [-e -f ../../inputs/makefile-2a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=288, content='-P [-e -f ../../inputs/makefile-2a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=289, content='-P [-e -f ../../inputs/makefile-1a -k -s]', partition=5, killableMutants=[]}
+testcase{test_no=290, content='-P [-e -f ../../inputs/makefile-1a -k -s]', partition=5, killableMutants=[]}
+testcase{test_no=291, content='-P [-e -f ../../inputs/makefile-2a -k -s]', partition=5, killableMutants=[]}
+testcase{test_no=292, content='-P [-e -f ../../inputs/makefile-2a -k -s]', partition=5, killableMutants=[]}
+testcase{test_no=293, content='-P [-e -f ../../inputs/makefile-1a -k -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=294, content='-P [-e -f ../../inputs/makefile-1a -k -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=295, content='-P [-e -f ../../inputs/makefile-2a -k -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=296, content='-P [-e -f ../../inputs/makefile-2a -k -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=297, content='-P [-e -f ../../inputs/makefile-1a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=298, content='-P [-e -f ../../inputs/makefile-1a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=299, content='-P [-e -f ../../inputs/makefile-2a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=300, content='-P [-e -f ../../inputs/makefile-2a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=301, content='-P [-e -f ../../inputs/makefile-1a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=302, content='-P [-e -f ../../inputs/makefile-1a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=303, content='-P [-e -f ../../inputs/makefile-2a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=304, content='-P [-e -f ../../inputs/makefile-2a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=305, content='-P [-e -f ../../inputs/makefile-1a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=306, content='-P [-e -f ../../inputs/makefile-1a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=307, content='-P [-e -f ../../inputs/makefile-2a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=308, content='-P [-e -f ../../inputs/makefile-2a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=309, content='-P [-e -f ../../inputs/makefile-1a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=310, content='-P [-e -f ../../inputs/makefile-1a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=311, content='-P [-e -f ../../inputs/makefile-2a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=312, content='-P [-e -f ../../inputs/makefile-2a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=313, content='-P [-e -f ../../inputs/makefile-1a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=314, content='-P [-e -f ../../inputs/makefile-1a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=315, content='-P [-e -f ../../inputs/makefile-2a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=316, content='-P [-e -f ../../inputs/makefile-2a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=317, content='-P [-e -f ../../inputs/makefile-1a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=318, content='-P [-e -f ../../inputs/makefile-1a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=319, content='-P [-e -f ../../inputs/makefile-2a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=320, content='-P [-e -f ../../inputs/makefile-2a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=321, content='-P [-e -f ../../inputs/makefile-1a -k -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=322, content='-P [-e -f ../../inputs/makefile-1a -k -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=323, content='-P [-e -f ../../inputs/makefile-2a -k -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=324, content='-P [-e -f ../../inputs/makefile-2a -k -n -s]', partition=5, killableMutants=[]}
+testcase{test_no=325, content='-P [-e -f ../../inputs/makefile-1a -k -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=326, content='-P [-e -f ../../inputs/makefile-1a -k -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=327, content='-P [-e -f ../../inputs/makefile-2a -k -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=328, content='-P [-e -f ../../inputs/makefile-2a -k -n -s -w]', partition=1, killableMutants=[]}
+testcase{test_no=329, content='-P [-e -f ../../inputs/makefile-1a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=330, content='-P [-e -f ../../inputs/makefile-1a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=331, content='-P [-e -f ../../inputs/makefile-2a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=332, content='-P [-e -f ../../inputs/makefile-2a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=333, content='-P [-e -f ../../inputs/makefile-1a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=334, content='-P [-e -f ../../inputs/makefile-1a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=335, content='-P [-e -f ../../inputs/makefile-2a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=336, content='-P [-e -f ../../inputs/makefile-2a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=337, content='-P [-e -f ../../inputs/makefile-1a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=338, content='-P [-e -f ../../inputs/makefile-1a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=339, content='-P [-e -f ../../inputs/makefile-2a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=340, content='-P [-e -f ../../inputs/makefile-2a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=341, content='-P [-e -f ../../inputs/makefile-1a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=342, content='-P [-e -f ../../inputs/makefile-1a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=343, content='-P [-e -f ../../inputs/makefile-2a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=344, content='-P [-e -f ../../inputs/makefile-2a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=345, content='-P [-e -f ../../inputs/makefile-1a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=346, content='-P [-e -f ../../inputs/makefile-1a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=347, content='-P [-e -f ../../inputs/makefile-2a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=348, content='-P [-e -f ../../inputs/makefile-2a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=349, content='-P [-e -f ../../inputs/makefile-1a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=350, content='-P [-e -f ../../inputs/makefile-1a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=351, content='-P [-e -f ../../inputs/makefile-2a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=352, content='-P [-e -f ../../inputs/makefile-2a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=353, content='-P [-e -f ../../inputs/makefile-1a -i -s]', partition=4, killableMutants=[]}
+testcase{test_no=354, content='-P [-e -f ../../inputs/makefile-1a -i -s]', partition=4, killableMutants=[]}
+testcase{test_no=355, content='-P [-e -f ../../inputs/makefile-2a -i -s]', partition=4, killableMutants=[]}
+testcase{test_no=356, content='-P [-e -f ../../inputs/makefile-2a -i -s]', partition=4, killableMutants=[]}
+testcase{test_no=357, content='-P [-e -f ../../inputs/makefile-1a -i -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=358, content='-P [-e -f ../../inputs/makefile-1a -i -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=359, content='-P [-e -f ../../inputs/makefile-2a -i -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=360, content='-P [-e -f ../../inputs/makefile-2a -i -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=361, content='-P [-e -f ../../inputs/makefile-1a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=362, content='-P [-e -f ../../inputs/makefile-1a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=363, content='-P [-e -f ../../inputs/makefile-2a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=364, content='-P [-e -f ../../inputs/makefile-2a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=365, content='-P [-e -f ../../inputs/makefile-1a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=366, content='-P [-e -f ../../inputs/makefile-1a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=367, content='-P [-e -f ../../inputs/makefile-2a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=368, content='-P [-e -f ../../inputs/makefile-2a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=369, content='-P [-e -f ../../inputs/makefile-1a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=370, content='-P [-e -f ../../inputs/makefile-1a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=371, content='-P [-e -f ../../inputs/makefile-2a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=372, content='-P [-e -f ../../inputs/makefile-2a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=373, content='-P [-e -f ../../inputs/makefile-1a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=374, content='-P [-e -f ../../inputs/makefile-1a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=375, content='-P [-e -f ../../inputs/makefile-2a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=376, content='-P [-e -f ../../inputs/makefile-2a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=377, content='-P [-e -f ../../inputs/makefile-1a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=378, content='-P [-e -f ../../inputs/makefile-1a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=379, content='-P [-e -f ../../inputs/makefile-2a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=380, content='-P [-e -f ../../inputs/makefile-2a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=381, content='-P [-e -f ../../inputs/makefile-1a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=382, content='-P [-e -f ../../inputs/makefile-1a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=383, content='-P [-e -f ../../inputs/makefile-2a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=384, content='-P [-e -f ../../inputs/makefile-2a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=385, content='-P [-e -f ../../inputs/makefile-1a -i -n -s]', partition=4, killableMutants=[]}
+testcase{test_no=386, content='-P [-e -f ../../inputs/makefile-1a -i -n -s]', partition=4, killableMutants=[]}
+testcase{test_no=387, content='-P [-e -f ../../inputs/makefile-2a -i -n -s]', partition=4, killableMutants=[]}
+testcase{test_no=388, content='-P [-e -f ../../inputs/makefile-2a -i -n -s]', partition=4, killableMutants=[]}
+testcase{test_no=389, content='-P [-e -f ../../inputs/makefile-1a -i -n -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=390, content='-P [-e -f ../../inputs/makefile-1a -i -n -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=391, content='-P [-e -f ../../inputs/makefile-2a -i -n -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=392, content='-P [-e -f ../../inputs/makefile-2a -i -n -s -w]', partition=0, killableMutants=[]}
+testcase{test_no=393, content='-P [-e -f ../../inputs/makefile-1a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=394, content='-P [-e -f ../../inputs/makefile-1a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=395, content='-P [-e -f ../../inputs/makefile-2a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=396, content='-P [-e -f ../../inputs/makefile-2a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=397, content='-P [-e -f ../../inputs/makefile-1a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=398, content='-P [-e -f ../../inputs/makefile-1a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=399, content='-P [-e -f ../../inputs/makefile-2a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=400, content='-P [-e -f ../../inputs/makefile-2a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=401, content='-P [-e -f ../../inputs/makefile-1a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=402, content='-P [-e -f ../../inputs/makefile-1a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=403, content='-P [-e -f ../../inputs/makefile-2a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=404, content='-P [-e -f ../../inputs/makefile-2a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=405, content='-P [-e -f ../../inputs/makefile-1a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=406, content='-P [-e -f ../../inputs/makefile-1a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=407, content='-P [-e -f ../../inputs/makefile-2a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=408, content='-P [-e -f ../../inputs/makefile-2a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=409, content='-P [-d -f ../../inputs/makefile-1a]', partition=7, killableMutants=[10]}
+testcase{test_no=410, content='-P [-d -f ../../inputs/makefile-1a]', partition=7, killableMutants=[10]}
+testcase{test_no=411, content='-P [-d -f ../../inputs/makefile-2a]', partition=7, killableMutants=[10]}
+testcase{test_no=412, content='-P [-d -f ../../inputs/makefile-2a]', partition=7, killableMutants=[10]}
+testcase{test_no=413, content='-P [-d -f ../../inputs/makefile-1a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=414, content='-P [-d -f ../../inputs/makefile-1a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=415, content='-P [-d -f ../../inputs/makefile-2a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=416, content='-P [-d -f ../../inputs/makefile-2a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=417, content='-P [-d -f ../../inputs/makefile-1a -s]', partition=5, killableMutants=[10]}
+testcase{test_no=418, content='-P [-d -f ../../inputs/makefile-1a -s]', partition=5, killableMutants=[10]}
+testcase{test_no=419, content='-P [-d -f ../../inputs/makefile-2a -s]', partition=5, killableMutants=[10]}
+testcase{test_no=420, content='-P [-d -f ../../inputs/makefile-2a -s]', partition=5, killableMutants=[10]}
+testcase{test_no=421, content='-P [-d -f ../../inputs/makefile-1a -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=422, content='-P [-d -f ../../inputs/makefile-1a -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=423, content='-P [-d -f ../../inputs/makefile-2a -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=424, content='-P [-d -f ../../inputs/makefile-2a -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=425, content='-P [-d -f ../../inputs/makefile-1a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=426, content='-P [-d -f ../../inputs/makefile-1a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=427, content='-P [-d -f ../../inputs/makefile-2a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=428, content='-P [-d -f ../../inputs/makefile-2a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=429, content='-P [-d -f ../../inputs/makefile-1a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=430, content='-P [-d -f ../../inputs/makefile-1a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=431, content='-P [-d -f ../../inputs/makefile-2a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=432, content='-P [-d -f ../../inputs/makefile-2a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=433, content='-P [-d -f ../../inputs/makefile-1a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=434, content='-P [-d -f ../../inputs/makefile-1a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=435, content='-P [-d -f ../../inputs/makefile-2a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=436, content='-P [-d -f ../../inputs/makefile-2a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=437, content='-P [-d -f ../../inputs/makefile-1a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=438, content='-P [-d -f ../../inputs/makefile-1a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=439, content='-P [-d -f ../../inputs/makefile-2a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=440, content='-P [-d -f ../../inputs/makefile-2a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=441, content='-P [-d -f ../../inputs/makefile-1a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=442, content='-P [-d -f ../../inputs/makefile-1a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=443, content='-P [-d -f ../../inputs/makefile-2a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=444, content='-P [-d -f ../../inputs/makefile-2a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=445, content='-P [-d -f ../../inputs/makefile-1a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=446, content='-P [-d -f ../../inputs/makefile-1a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=447, content='-P [-d -f ../../inputs/makefile-2a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=448, content='-P [-d -f ../../inputs/makefile-2a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=449, content='-P [-d -f ../../inputs/makefile-1a -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=450, content='-P [-d -f ../../inputs/makefile-1a -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=451, content='-P [-d -f ../../inputs/makefile-2a -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=452, content='-P [-d -f ../../inputs/makefile-2a -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=453, content='-P [-d -f ../../inputs/makefile-1a -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=454, content='-P [-d -f ../../inputs/makefile-1a -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=455, content='-P [-d -f ../../inputs/makefile-2a -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=456, content='-P [-d -f ../../inputs/makefile-2a -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=457, content='-P [-d -f ../../inputs/makefile-1a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=458, content='-P [-d -f ../../inputs/makefile-1a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=459, content='-P [-d -f ../../inputs/makefile-2a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=460, content='-P [-d -f ../../inputs/makefile-2a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=461, content='-P [-d -f ../../inputs/makefile-1a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=462, content='-P [-d -f ../../inputs/makefile-1a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=463, content='-P [-d -f ../../inputs/makefile-2a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=464, content='-P [-d -f ../../inputs/makefile-2a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=465, content='-P [-d -f ../../inputs/makefile-1a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=466, content='-P [-d -f ../../inputs/makefile-1a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=467, content='-P [-d -f ../../inputs/makefile-2a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=468, content='-P [-d -f ../../inputs/makefile-2a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=469, content='-P [-d -f ../../inputs/makefile-1a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=470, content='-P [-d -f ../../inputs/makefile-1a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=471, content='-P [-d -f ../../inputs/makefile-2a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=472, content='-P [-d -f ../../inputs/makefile-2a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=473, content='-P [-d -f ../../inputs/makefile-1a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=474, content='-P [-d -f ../../inputs/makefile-1a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=475, content='-P [-d -f ../../inputs/makefile-2a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=476, content='-P [-d -f ../../inputs/makefile-2a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=477, content='-P [-d -f ../../inputs/makefile-1a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=478, content='-P [-d -f ../../inputs/makefile-1a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=479, content='-P [-d -f ../../inputs/makefile-2a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=480, content='-P [-d -f ../../inputs/makefile-2a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=481, content='-P [-d -f ../../inputs/makefile-1a -k -s]', partition=5, killableMutants=[10]}
+testcase{test_no=482, content='-P [-d -f ../../inputs/makefile-1a -k -s]', partition=5, killableMutants=[10]}
+testcase{test_no=483, content='-P [-d -f ../../inputs/makefile-2a -k -s]', partition=5, killableMutants=[10]}
+testcase{test_no=484, content='-P [-d -f ../../inputs/makefile-2a -k -s]', partition=5, killableMutants=[10]}
+testcase{test_no=485, content='-P [-d -f ../../inputs/makefile-1a -k -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=486, content='-P [-d -f ../../inputs/makefile-1a -k -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=487, content='-P [-d -f ../../inputs/makefile-2a -k -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=488, content='-P [-d -f ../../inputs/makefile-2a -k -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=489, content='-P [-d -f ../../inputs/makefile-1a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=490, content='-P [-d -f ../../inputs/makefile-1a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=491, content='-P [-d -f ../../inputs/makefile-2a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=492, content='-P [-d -f ../../inputs/makefile-2a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=493, content='-P [-d -f ../../inputs/makefile-1a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=494, content='-P [-d -f ../../inputs/makefile-1a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=495, content='-P [-d -f ../../inputs/makefile-2a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=496, content='-P [-d -f ../../inputs/makefile-2a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=497, content='-P [-d -f ../../inputs/makefile-1a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=498, content='-P [-d -f ../../inputs/makefile-1a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=499, content='-P [-d -f ../../inputs/makefile-2a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=500, content='-P [-d -f ../../inputs/makefile-2a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=501, content='-P [-d -f ../../inputs/makefile-1a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=502, content='-P [-d -f ../../inputs/makefile-1a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=503, content='-P [-d -f ../../inputs/makefile-2a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=504, content='-P [-d -f ../../inputs/makefile-2a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=505, content='-P [-d -f ../../inputs/makefile-1a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=506, content='-P [-d -f ../../inputs/makefile-1a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=507, content='-P [-d -f ../../inputs/makefile-2a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=508, content='-P [-d -f ../../inputs/makefile-2a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=509, content='-P [-d -f ../../inputs/makefile-1a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=510, content='-P [-d -f ../../inputs/makefile-1a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=511, content='-P [-d -f ../../inputs/makefile-2a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=512, content='-P [-d -f ../../inputs/makefile-2a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=513, content='-P [-d -f ../../inputs/makefile-1a -k -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=514, content='-P [-d -f ../../inputs/makefile-1a -k -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=515, content='-P [-d -f ../../inputs/makefile-2a -k -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=516, content='-P [-d -f ../../inputs/makefile-2a -k -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=517, content='-P [-d -f ../../inputs/makefile-1a -k -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=518, content='-P [-d -f ../../inputs/makefile-1a -k -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=519, content='-P [-d -f ../../inputs/makefile-2a -k -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=520, content='-P [-d -f ../../inputs/makefile-2a -k -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=521, content='-P [-d -f ../../inputs/makefile-1a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=522, content='-P [-d -f ../../inputs/makefile-1a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=523, content='-P [-d -f ../../inputs/makefile-2a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=524, content='-P [-d -f ../../inputs/makefile-2a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=525, content='-P [-d -f ../../inputs/makefile-1a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=526, content='-P [-d -f ../../inputs/makefile-1a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=527, content='-P [-d -f ../../inputs/makefile-2a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=528, content='-P [-d -f ../../inputs/makefile-2a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=529, content='-P [-d -f ../../inputs/makefile-1a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=530, content='-P [-d -f ../../inputs/makefile-1a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=531, content='-P [-d -f ../../inputs/makefile-2a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=532, content='-P [-d -f ../../inputs/makefile-2a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=533, content='-P [-d -f ../../inputs/makefile-1a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=534, content='-P [-d -f ../../inputs/makefile-1a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=535, content='-P [-d -f ../../inputs/makefile-2a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=536, content='-P [-d -f ../../inputs/makefile-2a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=537, content='-P [-d -f ../../inputs/makefile-1a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=538, content='-P [-d -f ../../inputs/makefile-1a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=539, content='-P [-d -f ../../inputs/makefile-2a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=540, content='-P [-d -f ../../inputs/makefile-2a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=541, content='-P [-d -f ../../inputs/makefile-1a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=542, content='-P [-d -f ../../inputs/makefile-1a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=543, content='-P [-d -f ../../inputs/makefile-2a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=544, content='-P [-d -f ../../inputs/makefile-2a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=545, content='-P [-d -f ../../inputs/makefile-1a -i -s]', partition=4, killableMutants=[10]}
+testcase{test_no=546, content='-P [-d -f ../../inputs/makefile-1a -i -s]', partition=4, killableMutants=[10]}
+testcase{test_no=547, content='-P [-d -f ../../inputs/makefile-2a -i -s]', partition=4, killableMutants=[10]}
+testcase{test_no=548, content='-P [-d -f ../../inputs/makefile-2a -i -s]', partition=4, killableMutants=[10]}
+testcase{test_no=549, content='-P [-d -f ../../inputs/makefile-1a -i -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=550, content='-P [-d -f ../../inputs/makefile-1a -i -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=551, content='-P [-d -f ../../inputs/makefile-2a -i -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=552, content='-P [-d -f ../../inputs/makefile-2a -i -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=553, content='-P [-d -f ../../inputs/makefile-1a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=554, content='-P [-d -f ../../inputs/makefile-1a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=555, content='-P [-d -f ../../inputs/makefile-2a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=556, content='-P [-d -f ../../inputs/makefile-2a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=557, content='-P [-d -f ../../inputs/makefile-1a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=558, content='-P [-d -f ../../inputs/makefile-1a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=559, content='-P [-d -f ../../inputs/makefile-2a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=560, content='-P [-d -f ../../inputs/makefile-2a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=561, content='-P [-d -f ../../inputs/makefile-1a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=562, content='-P [-d -f ../../inputs/makefile-1a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=563, content='-P [-d -f ../../inputs/makefile-2a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=564, content='-P [-d -f ../../inputs/makefile-2a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=565, content='-P [-d -f ../../inputs/makefile-1a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=566, content='-P [-d -f ../../inputs/makefile-1a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=567, content='-P [-d -f ../../inputs/makefile-2a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=568, content='-P [-d -f ../../inputs/makefile-2a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=569, content='-P [-d -f ../../inputs/makefile-1a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=570, content='-P [-d -f ../../inputs/makefile-1a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=571, content='-P [-d -f ../../inputs/makefile-2a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=572, content='-P [-d -f ../../inputs/makefile-2a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=573, content='-P [-d -f ../../inputs/makefile-1a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=574, content='-P [-d -f ../../inputs/makefile-1a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=575, content='-P [-d -f ../../inputs/makefile-2a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=576, content='-P [-d -f ../../inputs/makefile-2a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=577, content='-P [-d -f ../../inputs/makefile-1a -i -n -s]', partition=4, killableMutants=[10]}
+testcase{test_no=578, content='-P [-d -f ../../inputs/makefile-1a -i -n -s]', partition=4, killableMutants=[10]}
+testcase{test_no=579, content='-P [-d -f ../../inputs/makefile-2a -i -n -s]', partition=4, killableMutants=[10]}
+testcase{test_no=580, content='-P [-d -f ../../inputs/makefile-2a -i -n -s]', partition=4, killableMutants=[10]}
+testcase{test_no=581, content='-P [-d -f ../../inputs/makefile-1a -i -n -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=582, content='-P [-d -f ../../inputs/makefile-1a -i -n -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=583, content='-P [-d -f ../../inputs/makefile-2a -i -n -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=584, content='-P [-d -f ../../inputs/makefile-2a -i -n -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=585, content='-P [-d -f ../../inputs/makefile-1a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=586, content='-P [-d -f ../../inputs/makefile-1a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=587, content='-P [-d -f ../../inputs/makefile-2a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=588, content='-P [-d -f ../../inputs/makefile-2a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=589, content='-P [-d -f ../../inputs/makefile-1a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=590, content='-P [-d -f ../../inputs/makefile-1a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=591, content='-P [-d -f ../../inputs/makefile-2a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=592, content='-P [-d -f ../../inputs/makefile-2a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=593, content='-P [-d -f ../../inputs/makefile-1a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=594, content='-P [-d -f ../../inputs/makefile-1a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=595, content='-P [-d -f ../../inputs/makefile-2a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=596, content='-P [-d -f ../../inputs/makefile-2a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=597, content='-P [-d -f ../../inputs/makefile-1a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=598, content='-P [-d -f ../../inputs/makefile-1a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=599, content='-P [-d -f ../../inputs/makefile-2a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=600, content='-P [-d -f ../../inputs/makefile-2a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=601, content='-P [-d -e -f ../../inputs/makefile-1a]', partition=7, killableMutants=[10]}
+testcase{test_no=602, content='-P [-d -e -f ../../inputs/makefile-1a]', partition=7, killableMutants=[10]}
+testcase{test_no=603, content='-P [-d -e -f ../../inputs/makefile-2a]', partition=7, killableMutants=[10]}
+testcase{test_no=604, content='-P [-d -e -f ../../inputs/makefile-2a]', partition=7, killableMutants=[10]}
+testcase{test_no=605, content='-P [-d -e -f ../../inputs/makefile-1a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=606, content='-P [-d -e -f ../../inputs/makefile-1a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=607, content='-P [-d -e -f ../../inputs/makefile-2a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=608, content='-P [-d -e -f ../../inputs/makefile-2a -w]', partition=3, killableMutants=[10]}
+testcase{test_no=609, content='-P [-d -e -f ../../inputs/makefile-1a -s]', partition=5, killableMutants=[10]}
+testcase{test_no=610, content='-P [-d -e -f ../../inputs/makefile-1a -s]', partition=5, killableMutants=[10]}
+testcase{test_no=611, content='-P [-d -e -f ../../inputs/makefile-2a -s]', partition=5, killableMutants=[10]}
+testcase{test_no=612, content='-P [-d -e -f ../../inputs/makefile-2a -s]', partition=5, killableMutants=[10]}
+testcase{test_no=613, content='-P [-d -e -f ../../inputs/makefile-1a -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=614, content='-P [-d -e -f ../../inputs/makefile-1a -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=615, content='-P [-d -e -f ../../inputs/makefile-2a -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=616, content='-P [-d -e -f ../../inputs/makefile-2a -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=617, content='-P [-d -e -f ../../inputs/makefile-1a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=618, content='-P [-d -e -f ../../inputs/makefile-1a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=619, content='-P [-d -e -f ../../inputs/makefile-2a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=620, content='-P [-d -e -f ../../inputs/makefile-2a -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=621, content='-P [-d -e -f ../../inputs/makefile-1a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=622, content='-P [-d -e -f ../../inputs/makefile-1a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=623, content='-P [-d -e -f ../../inputs/makefile-2a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=624, content='-P [-d -e -f ../../inputs/makefile-2a -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=625, content='-P [-d -e -f ../../inputs/makefile-1a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=626, content='-P [-d -e -f ../../inputs/makefile-1a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=627, content='-P [-d -e -f ../../inputs/makefile-2a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=628, content='-P [-d -e -f ../../inputs/makefile-2a -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=629, content='-P [-d -e -f ../../inputs/makefile-1a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=630, content='-P [-d -e -f ../../inputs/makefile-1a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=631, content='-P [-d -e -f ../../inputs/makefile-2a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=632, content='-P [-d -e -f ../../inputs/makefile-2a -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=633, content='-P [-d -e -f ../../inputs/makefile-1a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=634, content='-P [-d -e -f ../../inputs/makefile-1a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=635, content='-P [-d -e -f ../../inputs/makefile-2a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=636, content='-P [-d -e -f ../../inputs/makefile-2a -n]', partition=7, killableMutants=[10]}
+testcase{test_no=637, content='-P [-d -e -f ../../inputs/makefile-1a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=638, content='-P [-d -e -f ../../inputs/makefile-1a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=639, content='-P [-d -e -f ../../inputs/makefile-2a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=640, content='-P [-d -e -f ../../inputs/makefile-2a -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=641, content='-P [-d -e -f ../../inputs/makefile-1a -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=642, content='-P [-d -e -f ../../inputs/makefile-1a -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=643, content='-P [-d -e -f ../../inputs/makefile-2a -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=644, content='-P [-d -e -f ../../inputs/makefile-2a -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=645, content='-P [-d -e -f ../../inputs/makefile-1a -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=646, content='-P [-d -e -f ../../inputs/makefile-1a -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=647, content='-P [-d -e -f ../../inputs/makefile-2a -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=648, content='-P [-d -e -f ../../inputs/makefile-2a -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=649, content='-P [-d -e -f ../../inputs/makefile-1a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=650, content='-P [-d -e -f ../../inputs/makefile-1a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=651, content='-P [-d -e -f ../../inputs/makefile-2a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=652, content='-P [-d -e -f ../../inputs/makefile-2a -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=653, content='-P [-d -e -f ../../inputs/makefile-1a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=654, content='-P [-d -e -f ../../inputs/makefile-1a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=655, content='-P [-d -e -f ../../inputs/makefile-2a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=656, content='-P [-d -e -f ../../inputs/makefile-2a -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=657, content='-P [-d -e -f ../../inputs/makefile-1a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=658, content='-P [-d -e -f ../../inputs/makefile-1a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=659, content='-P [-d -e -f ../../inputs/makefile-2a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=660, content='-P [-d -e -f ../../inputs/makefile-2a -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=661, content='-P [-d -e -f ../../inputs/makefile-1a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=662, content='-P [-d -e -f ../../inputs/makefile-1a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=663, content='-P [-d -e -f ../../inputs/makefile-2a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=664, content='-P [-d -e -f ../../inputs/makefile-2a -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=665, content='-P [-d -e -f ../../inputs/makefile-1a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=666, content='-P [-d -e -f ../../inputs/makefile-1a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=667, content='-P [-d -e -f ../../inputs/makefile-2a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=668, content='-P [-d -e -f ../../inputs/makefile-2a -k]', partition=7, killableMutants=[10]}
+testcase{test_no=669, content='-P [-d -e -f ../../inputs/makefile-1a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=670, content='-P [-d -e -f ../../inputs/makefile-1a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=671, content='-P [-d -e -f ../../inputs/makefile-2a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=672, content='-P [-d -e -f ../../inputs/makefile-2a -k -w]', partition=3, killableMutants=[10]}
+testcase{test_no=673, content='-P [-d -e -f ../../inputs/makefile-1a -k -s]', partition=5, killableMutants=[10]}
+testcase{test_no=674, content='-P [-d -e -f ../../inputs/makefile-1a -k -s]', partition=5, killableMutants=[10]}
+testcase{test_no=675, content='-P [-d -e -f ../../inputs/makefile-2a -k -s]', partition=5, killableMutants=[10]}
+testcase{test_no=676, content='-P [-d -e -f ../../inputs/makefile-2a -k -s]', partition=5, killableMutants=[10]}
+testcase{test_no=677, content='-P [-d -e -f ../../inputs/makefile-1a -k -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=678, content='-P [-d -e -f ../../inputs/makefile-1a -k -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=679, content='-P [-d -e -f ../../inputs/makefile-2a -k -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=680, content='-P [-d -e -f ../../inputs/makefile-2a -k -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=681, content='-P [-d -e -f ../../inputs/makefile-1a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=682, content='-P [-d -e -f ../../inputs/makefile-1a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=683, content='-P [-d -e -f ../../inputs/makefile-2a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=684, content='-P [-d -e -f ../../inputs/makefile-2a -k -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=685, content='-P [-d -e -f ../../inputs/makefile-1a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=686, content='-P [-d -e -f ../../inputs/makefile-1a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=687, content='-P [-d -e -f ../../inputs/makefile-2a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=688, content='-P [-d -e -f ../../inputs/makefile-2a -k -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=689, content='-P [-d -e -f ../../inputs/makefile-1a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=690, content='-P [-d -e -f ../../inputs/makefile-1a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=691, content='-P [-d -e -f ../../inputs/makefile-2a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=692, content='-P [-d -e -f ../../inputs/makefile-2a -k -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=693, content='-P [-d -e -f ../../inputs/makefile-1a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=694, content='-P [-d -e -f ../../inputs/makefile-1a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=695, content='-P [-d -e -f ../../inputs/makefile-2a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=696, content='-P [-d -e -f ../../inputs/makefile-2a -k -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=697, content='-P [-d -e -f ../../inputs/makefile-1a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=698, content='-P [-d -e -f ../../inputs/makefile-1a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=699, content='-P [-d -e -f ../../inputs/makefile-2a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=700, content='-P [-d -e -f ../../inputs/makefile-2a -k -n]', partition=7, killableMutants=[10]}
+testcase{test_no=701, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=702, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=703, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=704, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -w]', partition=3, killableMutants=[10]}
+testcase{test_no=705, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=706, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=707, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=708, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -s]', partition=5, killableMutants=[10]}
+testcase{test_no=709, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=710, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=711, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=712, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -s -w]', partition=1, killableMutants=[10]}
+testcase{test_no=713, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=714, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=715, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=716, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -p]', partition=7, killableMutants=[10, 16]}
+testcase{test_no=717, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=718, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=719, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=720, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -p -w]', partition=3, killableMutants=[10, 16]}
+testcase{test_no=721, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=722, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=723, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=724, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -p -s]', partition=5, killableMutants=[10, 16]}
+testcase{test_no=725, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=726, content='-P [-d -e -f ../../inputs/makefile-1a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=727, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=728, content='-P [-d -e -f ../../inputs/makefile-2a -k -n -p -s -w]', partition=1, killableMutants=[10, 16]}
+testcase{test_no=729, content='-P [-d -e -f ../../inputs/makefile-1a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=730, content='-P [-d -e -f ../../inputs/makefile-1a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=731, content='-P [-d -e -f ../../inputs/makefile-2a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=732, content='-P [-d -e -f ../../inputs/makefile-2a -i]', partition=6, killableMutants=[10]}
+testcase{test_no=733, content='-P [-d -e -f ../../inputs/makefile-1a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=734, content='-P [-d -e -f ../../inputs/makefile-1a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=735, content='-P [-d -e -f ../../inputs/makefile-2a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=736, content='-P [-d -e -f ../../inputs/makefile-2a -i -w]', partition=2, killableMutants=[10]}
+testcase{test_no=737, content='-P [-d -e -f ../../inputs/makefile-1a -i -s]', partition=4, killableMutants=[10]}
+testcase{test_no=738, content='-P [-d -e -f ../../inputs/makefile-1a -i -s]', partition=4, killableMutants=[10]}
+testcase{test_no=739, content='-P [-d -e -f ../../inputs/makefile-2a -i -s]', partition=4, killableMutants=[10]}
+testcase{test_no=740, content='-P [-d -e -f ../../inputs/makefile-2a -i -s]', partition=4, killableMutants=[10]}
+testcase{test_no=741, content='-P [-d -e -f ../../inputs/makefile-1a -i -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=742, content='-P [-d -e -f ../../inputs/makefile-1a -i -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=743, content='-P [-d -e -f ../../inputs/makefile-2a -i -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=744, content='-P [-d -e -f ../../inputs/makefile-2a -i -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=745, content='-P [-d -e -f ../../inputs/makefile-1a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=746, content='-P [-d -e -f ../../inputs/makefile-1a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=747, content='-P [-d -e -f ../../inputs/makefile-2a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=748, content='-P [-d -e -f ../../inputs/makefile-2a -i -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=749, content='-P [-d -e -f ../../inputs/makefile-1a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=750, content='-P [-d -e -f ../../inputs/makefile-1a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=751, content='-P [-d -e -f ../../inputs/makefile-2a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=752, content='-P [-d -e -f ../../inputs/makefile-2a -i -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=753, content='-P [-d -e -f ../../inputs/makefile-1a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=754, content='-P [-d -e -f ../../inputs/makefile-1a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=755, content='-P [-d -e -f ../../inputs/makefile-2a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=756, content='-P [-d -e -f ../../inputs/makefile-2a -i -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=757, content='-P [-d -e -f ../../inputs/makefile-1a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=758, content='-P [-d -e -f ../../inputs/makefile-1a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=759, content='-P [-d -e -f ../../inputs/makefile-2a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=760, content='-P [-d -e -f ../../inputs/makefile-2a -i -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=761, content='-P [-d -e -f ../../inputs/makefile-1a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=762, content='-P [-d -e -f ../../inputs/makefile-1a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=763, content='-P [-d -e -f ../../inputs/makefile-2a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=764, content='-P [-d -e -f ../../inputs/makefile-2a -i -n]', partition=6, killableMutants=[10]}
+testcase{test_no=765, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=766, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=767, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=768, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -w]', partition=2, killableMutants=[10]}
+testcase{test_no=769, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -s]', partition=4, killableMutants=[10]}
+testcase{test_no=770, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -s]', partition=4, killableMutants=[10]}
+testcase{test_no=771, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -s]', partition=4, killableMutants=[10]}
+testcase{test_no=772, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -s]', partition=4, killableMutants=[10]}
+testcase{test_no=773, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=774, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=775, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=776, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -s -w]', partition=0, killableMutants=[10]}
+testcase{test_no=777, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=778, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=779, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=780, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -p]', partition=6, killableMutants=[10, 16]}
+testcase{test_no=781, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=782, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=783, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=784, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -p -w]', partition=2, killableMutants=[10, 16]}
+testcase{test_no=785, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=786, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=787, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=788, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -p -s]', partition=4, killableMutants=[10, 16]}
+testcase{test_no=789, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=790, content='-P [-d -e -f ../../inputs/makefile-1a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=791, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}
+testcase{test_no=792, content='-P [-d -e -f ../../inputs/makefile-2a -i -n -p -s -w]', partition=0, killableMutants=[10, 16]}

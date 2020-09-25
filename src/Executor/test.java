@@ -1,4 +1,4 @@
-package Excuter;
+package Executor;
 
 /**
  * @author RoFire
