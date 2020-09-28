@@ -1,33 +1,30 @@
 # RL-APT_Expand
 This is an extended experiment on RL-APT, the experimental subjects include Grep; Gzip; Make (three C programs)
 
-##Algorithm Only
+## Algorithm Only
 This package contains the basic algorithms of RL-APT
-##Constant
+## Constant
 The default value of the parameters
-##Strategy
+## Strategy
 This package contains all test algorithms
-##Executor
+## Executor
 Independent executor and total executor
 
-##GenerateTestSuit
-###-generate
-Generate test cases
-###-get_partition
-get partitions
-###-get_fault_matrix
-get fault-matrix
+## GenerateTestSuit
+- generate：Generate test cases
+- get_partition：get partitions
+- get_fault_matrix：get fault-matrix
 
-##Read
+## Read
 Mainly used to read
-##Log
+## Log
 Mainly used to record
-##Util
+## Util
 Tools for recording time and measurement values
 
-##Program_Info
+## Program_Info
 Source program information
-##Testcases_Info
+## Testcases_Info
 Test case information
-##Result
+## Result
 The test result
