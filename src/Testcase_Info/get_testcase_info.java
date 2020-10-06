@@ -55,10 +55,10 @@ public class get_testcase_info {
                     record_tc_info(s, v);
                 }
             } else if (s == "Gzip") {
-//                String[] version = {"v1","v2","v4","v5"};
-//                for (String v : version) {
-//                    record_tc_info(s,v);
-//                }
+                String[] version = {"v1", "v2", "v4", "v5"};
+                for (String v : version) {
+                    record_tc_info(s, v);
+                }
             } else {
                 String[] version = {"v1", "v2"};
                 for (String v : version) {

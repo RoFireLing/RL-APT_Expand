@@ -14,7 +14,7 @@ public class RLAPT_S {
 
     private double RLAPT_alpha = 1;
 
-    private double RLAPT_gamma = 0.6;
+    private double RLAPT_gamma = 0.5;
 
     private double RLAPT_r0 = 1;
 

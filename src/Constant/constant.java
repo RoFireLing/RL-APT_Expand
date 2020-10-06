@@ -109,8 +109,10 @@ public class constant {
             return grep_tc_num;
         } else if (program_name == "Gzip") {
             return gzip_tc_num;
-        } else {
+        } else if (program_name == "Make") {
             return make_tc_num;
+        } else {
+            return -1;
         }
     }
 
@@ -119,8 +121,10 @@ public class constant {
             return grep_version_num;
         } else if (program_name == "Gzip") {
             return gzip_version_num;
-        } else {
+        } else if (program_name == "Make") {
             return make_version_num;
+        } else {
+            return -1;
         }
     }
 

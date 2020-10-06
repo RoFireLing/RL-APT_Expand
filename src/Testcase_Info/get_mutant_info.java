@@ -70,10 +70,10 @@ public class get_mutant_info {
                     get_mutant_info(s, v);
                 }
             } else if (s == "Gzip") {
-//                String[] version = {"v1","v2","v4","v5"};
-//                for (String v : version) {
-//                    get_mutant_info(s,v);
-//                }
+                String[] version = {"v1", "v2", "v4", "v5"};
+                for (String v : version) {
+                    get_mutant_info(s, v);
+                }
             } else {
                 String[] version = {"v1", "v2"};
                 for (String v : version) {

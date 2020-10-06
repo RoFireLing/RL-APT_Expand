@@ -4,8 +4,6 @@ import Constant.constant;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @author RoFire
@@ -24,7 +22,7 @@ public class generate {
         } else if (programe_name == "Gzip") {
             txt_name = constant.gzip_tc_path;
             tc_nums = constant.gzip_tc_num;
-        } else {
+        } else if (programe_name == "Make") {
             txt_name = constant.make_tc_path;
             tc_nums = constant.make_tc_num;
         }
@@ -38,14 +36,6 @@ public class generate {
             BufferedReader br = new BufferedReader(new FileReader(txt_name));
             String s = null;
             while ((s = br.readLine()) != null) {
-                if (programe_name == "Gzip" || programe_name == "Make") {
-                    String pattern = "-P \\[[^\\]]{0,}\\]{1}";
-                    Pattern p = Pattern.compile(pattern);
-                    Matcher m = p.matcher(s);
-                    while (m.find()) {
-                        s = m.group();
-                    }
-                }
                 tc[cnt] = new testcase(cnt, s, 0, null);
                 cnt++;
             }

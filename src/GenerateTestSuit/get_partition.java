@@ -1,5 +1,8 @@
 package GenerateTestSuit;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author RoFire
  * @date 2020/9/21
@@ -60,11 +63,43 @@ public class get_partition {
         } else if (program_name == "Gzip") {
             for (testcase t : tc) {
                 String content = t.getContent();
+                if (content.indexOf("-r") != -1 || content.indexOf("-qr") != -1 || content.indexOf("-fr") != -1) {
+                    if (content.indexOf("subdir") != -1) {
+                        // -r dir
+                        t.setPartition(2);
+                    } else {
+                        // -r normal
+                        t.setPartition(0);
+                    }
+                } else {
+                    if (content.indexOf("subdir") != -1) {
+                        // dir
+                        t.setPartition(3);
+                    } else if (content.indexOf("zipfile") != -1) {
+                        // zip
+                        t.setPartition(4);
+                    } else if (content.indexOf("binaryfile") != -1) {
+                        // binary
+                        t.setPartition(5);
+                    } else {
+                        // normal
+                        t.setPartition(1);
+                    }
+                }
 
             }
-        } else {
+        } else if (program_name == "Make") {
             for (testcase t : tc) {
                 String content = t.getContent();
+
+                // Extract the main part
+                String pattern = "-P \\[[^\\]]{0,}\\]{1}";
+                Pattern p = Pattern.compile(pattern);
+                Matcher m = p.matcher(content);
+                while (m.find()) {
+                    content = m.group();
+                }
+
                 if (content.indexOf("-w") != -1) {
                     if (content.indexOf("-s") != -1) {
                         if (content.indexOf("-i") != -1) {

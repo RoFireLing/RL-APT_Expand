@@ -61,7 +61,7 @@ public class get_partition_info {
             if (s == "Grep") {
                 get_partition_info(s);
             } else if (s == "Gzip") {
-//                    get_partition_info(s);
+                get_partition_info(s);
             } else {
                 get_partition_info(s);
             }

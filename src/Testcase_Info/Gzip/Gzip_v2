@@ -1,0 +1,214 @@
+testcase{test_no=0, content='-P[-h] -O[test1]', partition=1, killableMutants=[]}
+testcase{test_no=1, content='-P[--help] -O[test2]', partition=1, killableMutants=[]}
+testcase{test_no=2, content='-P[-L] -O[test3]', partition=1, killableMutants=[]}
+testcase{test_no=3, content='-P[--license] -O[test4]', partition=1, killableMutants=[]}
+testcase{test_no=4, content='-P[-V] -I[] -O[test5]', partition=1, killableMutants=[]}
+testcase{test_no=5, content='-P[--version] -I[] -O[test6]', partition=1, killableMutants=[]}
+testcase{test_no=6, content='-P[../inputs/testdir/file26 -c] -O[test7]', partition=1, killableMutants=[1, 3, 6]}
+testcase{test_no=7, content='-P[--stdout] -I[testdir/file27] -O[test8]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=8, content='-P[-d] -I[gzdir/file8.z] -O[test9]', partition=1, killableMutants=[]}
+testcase{test_no=9, content='-P[../inputs/gzdir/file9.z -d] -O[test10] -X[cpoptd.sh]', partition=1, killableMutants=[]}
+testcase{test_no=10, content='-P[--decompress] -I[gzdir/file5.z] -O[test11]', partition=1, killableMutants=[]}
+testcase{test_no=11, content='-P[--uncompress] -I[gzdir/file6.z] -O[test12]', partition=1, killableMutants=[]}
+testcase{test_no=12, content='-P[../inputs/testdir/file3 -f] -O[test13] -X[cpoptf.sh]', partition=1, killableMutants=[1, 3, 6]}
+testcase{test_no=13, content='-P[--force] -I[testdir/file4] -O[test14]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=14, content='-P[../inputs/testdir/file32 -q] -O[test15] -X[cpoptq.sh]', partition=1, killableMutants=[1, 3, 6]}
+testcase{test_no=15, content='-P[--quiet] -I[testdir/file10] -O[test16]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=16, content='-P[-r ../inputs/testdir/subdir1] -O[test17] -X[cpoptr1.sh]', partition=2, killableMutants=[]}
+testcase{test_no=17, content='-P[../inputs/testdir/subdir2 -r] -O[test18] -X[cpoptr.sh]', partition=2, killableMutants=[]}
+testcase{test_no=18, content='-P[--recurse ../inputs/testdir/subdir3] -O[test19] -X[cpoptr2.sh]', partition=2, killableMutants=[]}
+testcase{test_no=19, content='-P[-t] -I[gzdir/file1.z] -O[test20]', partition=1, killableMutants=[]}
+testcase{test_no=20, content='-P[../inputs/gzdir/file1.z -t] -O[test21]', partition=1, killableMutants=[]}
+testcase{test_no=21, content='-P[--test] -I[gzdir/file1.z] -O[test22]', partition=1, killableMutants=[]}
+testcase{test_no=22, content='-P[../inputs/testdir/file11 -v] -O[test23] -X[cpoptv.sh]', partition=1, killableMutants=[1, 3, 6]}
+testcase{test_no=23, content='-P[--verbose] -I[testdir/file12] -O[test24]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=24, content='-P[../inputs/testdir/file13 -1] -O[test25] -X[cpopt1.sh]', partition=1, killableMutants=[1, 3]}
+testcase{test_no=25, content='-P[--fast] -I[testdir/file14] -O[test26]', partition=1, killableMutants=[1]}
+testcase{test_no=26, content='-P[../inputs/testdir/file15 -2] -O[test27] -X[cpopt2.sh]', partition=1, killableMutants=[1, 3]}
+testcase{test_no=27, content='-P[../inputs/testdir/file16 -3] -O[test28] -X[cpopt3.sh]', partition=1, killableMutants=[3]}
+testcase{test_no=28, content='-P[../inputs/testdir/file17 -4] -O[test29] -X[cpopt4.sh]', partition=1, killableMutants=[1, 3, 6]}
+testcase{test_no=29, content='-P[../inputs/testdir/file18 -5] -O[test30] -X[cpopt5.sh]', partition=1, killableMutants=[1, 3, 6]}
+testcase{test_no=30, content='-P[../inputs/testdir/file19 -6] -O[test31] -X[cpopt6.sh]', partition=1, killableMutants=[1, 3, 6]}
+testcase{test_no=31, content='-P[../inputs/testdir/file20 -7] -O[test32] -X[cpopt7.sh]', partition=1, killableMutants=[1, 3, 6]}
+testcase{test_no=32, content='-P[../inputs/testdir/file21 -8] -O[test33] -X[cpopt8.sh]', partition=1, killableMutants=[1, 3, 6]}
+testcase{test_no=33, content='-P[../inputs/testdir/file22 -9] -O[test34] -X[cpopt9.sh]', partition=1, killableMutants=[1, 3, 6]}
+testcase{test_no=34, content='-P[--best] -I[testdir/file23] -O[test35]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=35, content='-I[testdir/subdir] -O[test36]', partition=3, killableMutants=[]}
+testcase{test_no=36, content='-I[testdir/zerobytefile] -O[test37]', partition=1, killableMutants=[]}
+testcase{test_no=37, content='-I[testdir/2gbfile] -O[test38]', partition=1, killableMutants=[]}
+testcase{test_no=38, content='-P[-d] -I[gzdir/corruptfile.z] -O[test39]', partition=1, killableMutants=[]}
+testcase{test_no=39, content='-I[gzdir/zfile.z] -O[test40]', partition=1, killableMutants=[]}
+testcase{test_no=40, content='-P[-d] -I[gzdir/zipfile.zip] -O[test41]', partition=4, killableMutants=[]}
+testcase{test_no=41, content='-P[-d] -I[gzdir/compressfile.Z] -O[test42]', partition=1, killableMutants=[]}
+testcase{test_no=42, content='-P[-d] -I[gzdir/pkzipfile.Z] -O[test43]', partition=4, killableMutants=[]}
+testcase{test_no=43, content='-P[-d] -I[gzdir/packfile.z] -O[test44]', partition=1, killableMutants=[]}
+testcase{test_no=44, content='-I[testdir/symbolicfile] -O[test45]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=45, content='-I[testdir/file4] -O[test46]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=46, content='-I[testdir/binaryfile0] -O[test47]', partition=5, killableMutants=[1, 6]}
+testcase{test_no=47, content='-P[-d] -I[gzdir/file101.z] -O[test48]', partition=1, killableMutants=[]}
+testcase{test_no=48, content='-I[testdir/encryptfile] -O[test49]', partition=1, killableMutants=[]}
+testcase{test_no=49, content='-P[-d] -I[gzdir/encryptfile1.z] -O[test50]', partition=1, killableMutants=[]}
+testcase{test_no=50, content='-P[-d] -I[gzdir/errorfile.z] -O[test51]', partition=1, killableMutants=[]}
+testcase{test_no=51, content='-P[../inputs/testdir/binaryfile1] -B -O[test52] -X[breakscript.sh]', partition=5, killableMutants=[]}
+testcase{test_no=52, content='-I[testdir/tarfile.tar] -O[test53]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=53, content='-P[-d] -I[gzdir/tarfile.tgz] -O[test54]', partition=1, killableMutants=[]}
+testcase{test_no=54, content='-P[../inputs/length/abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcde] -O[test55] -S[longfilename.sh] -X[cplongname.sh]', partition=1, killableMutants=[]}
+testcase{test_no=55, content='-P[-fqrv1] -I[testdir/file2] -O[test56]', partition=1, killableMutants=[1]}
+testcase{test_no=56, content='-P[-fqrv2] -I[testdir/file2] -O[test57]', partition=1, killableMutants=[1]}
+testcase{test_no=57, content='-P[-fqrv3] -I[testdir/file2] -O[test58]', partition=1, killableMutants=[]}
+testcase{test_no=58, content='-P[-fqrv4] -I[testdir/file2] -O[test59]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=59, content='-P[-fqrv5] -I[testdir/file2] -O[test60]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=60, content='-P[-fqrv6] -I[testdir/file2] -O[test61]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=61, content='-P[-fqrv7] -I[testdir/file2] -O[test62]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=62, content='-P[-fqrv8] -I[testdir/file2] -O[test63]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=63, content='-P[-fqrv9] -I[testdir/file2] -O[test64]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=64, content='-P[-fqrv] -I[testdir/file2] -O[test65]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=65, content='-P[-fqr1] -I[testdir/file2] -O[test66]', partition=1, killableMutants=[1]}
+testcase{test_no=66, content='-P[-fqr2] -I[testdir/file2] -O[test67]', partition=1, killableMutants=[1]}
+testcase{test_no=67, content='-P[-fqr3] -I[testdir/file2] -O[test68]', partition=1, killableMutants=[]}
+testcase{test_no=68, content='-P[-fqr4] -I[testdir/file2] -O[test69]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=69, content='-P[-fqr5] -I[testdir/file2] -O[test70]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=70, content='-P[-fqr6] -I[testdir/file2] -O[test71]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=71, content='-P[-fqr7] -I[testdir/file2] -O[test72]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=72, content='-P[-fqr8] -I[testdir/file2] -O[test73]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=73, content='-P[-fqr9] -I[testdir/file2] -O[test74]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=74, content='-P[-fqr] -I[testdir/file2] -O[test75]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=75, content='-P[-fqv1] -I[testdir/file2] -O[test76]', partition=1, killableMutants=[1]}
+testcase{test_no=76, content='-P[-fqv2] -I[testdir/file2] -O[test77]', partition=1, killableMutants=[1]}
+testcase{test_no=77, content='-P[-fqv3] -I[testdir/file2] -O[test78]', partition=1, killableMutants=[]}
+testcase{test_no=78, content='-P[-fqv4] -I[testdir/file2] -O[test79]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=79, content='-P[-fqv5] -I[testdir/file2] -O[test80]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=80, content='-P[-fqv6] -I[testdir/file2] -O[test81]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=81, content='-P[-fqv7] -I[testdir/file2] -O[test82]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=82, content='-P[-fqv8] -I[testdir/file2] -O[test83]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=83, content='-P[-fqv9] -I[testdir/file2] -O[test84]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=84, content='-P[-fqv] -I[testdir/file2] -O[test85]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=85, content='-P[-fq1] -I[testdir/file2] -O[test86]', partition=1, killableMutants=[1]}
+testcase{test_no=86, content='-P[-fq2] -I[testdir/file2] -O[test87]', partition=1, killableMutants=[1]}
+testcase{test_no=87, content='-P[-fq3] -I[testdir/file2] -O[test88]', partition=1, killableMutants=[]}
+testcase{test_no=88, content='-P[-fq4] -I[testdir/file2] -O[test89]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=89, content='-P[-fq5] -I[testdir/file2] -O[test90]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=90, content='-P[-fq6] -I[testdir/file2] -O[test91]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=91, content='-P[-fq7] -I[testdir/file2] -O[test92]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=92, content='-P[-fq8] -I[testdir/file2] -O[test93]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=93, content='-P[-fq9] -I[testdir/file2] -O[test94]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=94, content='-P[-fq] -I[testdir/file2] -O[test95]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=95, content='-P[-frv1] -I[testdir/file2] -O[test96]', partition=0, killableMutants=[1]}
+testcase{test_no=96, content='-P[-frv2] -I[testdir/file2] -O[test97]', partition=0, killableMutants=[1]}
+testcase{test_no=97, content='-P[-frv3] -I[testdir/file2] -O[test98]', partition=0, killableMutants=[]}
+testcase{test_no=98, content='-P[-frv4] -I[testdir/file2] -O[test99]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=99, content='-P[-frv5] -I[testdir/file2] -O[test100]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=100, content='-P[-frv6] -I[testdir/file2] -O[test101]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=101, content='-P[-frv7] -I[testdir/file2] -O[test102]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=102, content='-P[-frv8] -I[testdir/file2] -O[test103]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=103, content='-P[-frv9] -I[testdir/file2] -O[test104]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=104, content='-P[-frv] -I[testdir/file2] -O[test105]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=105, content='-P[-fr1] -I[testdir/file2] -O[test106]', partition=0, killableMutants=[1]}
+testcase{test_no=106, content='-P[-fr2] -I[testdir/file2] -O[test107]', partition=0, killableMutants=[1]}
+testcase{test_no=107, content='-P[-fr3] -I[testdir/file2] -O[test108]', partition=0, killableMutants=[]}
+testcase{test_no=108, content='-P[-fr4] -I[testdir/file2] -O[test109]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=109, content='-P[-fr5] -I[testdir/file2] -O[test110]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=110, content='-P[-fr6] -I[testdir/file2] -O[test111]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=111, content='-P[-fr7] -I[testdir/file2] -O[test112]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=112, content='-P[-fr8] -I[testdir/file2] -O[test113]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=113, content='-P[-fr9] -I[testdir/file2] -O[test114]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=114, content='-P[-fr] -I[testdir/file2] -O[test115]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=115, content='-P[-fv1] -I[testdir/file2] -O[test116]', partition=1, killableMutants=[1]}
+testcase{test_no=116, content='-P[-fv2] -I[testdir/file2] -O[test117]', partition=1, killableMutants=[1]}
+testcase{test_no=117, content='-P[-fv3] -I[testdir/file2] -O[test118]', partition=1, killableMutants=[]}
+testcase{test_no=118, content='-P[-fv4] -I[testdir/file2] -O[test119]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=119, content='-P[-fv5] -I[testdir/file2] -O[test120]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=120, content='-P[-fv6] -I[testdir/file2] -O[test121]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=121, content='-P[-fv7] -I[testdir/file2] -O[test122]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=122, content='-P[-fv8] -I[testdir/file2] -O[test123]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=123, content='-P[-fv9] -I[testdir/file2] -O[test124]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=124, content='-P[-fv] -I[testdir/file2] -O[test125]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=125, content='-P[-f1] -I[testdir/file2] -O[test126]', partition=1, killableMutants=[1]}
+testcase{test_no=126, content='-P[-f2] -I[testdir/file2] -O[test127]', partition=1, killableMutants=[1]}
+testcase{test_no=127, content='-P[-f3] -I[testdir/file2] -O[test128]', partition=1, killableMutants=[]}
+testcase{test_no=128, content='-P[-f4] -I[testdir/file2] -O[test129]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=129, content='-P[-f5] -I[testdir/file2] -O[test130]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=130, content='-P[-f6] -I[testdir/file2] -O[test131]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=131, content='-P[-f7] -I[testdir/file2] -O[test132]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=132, content='-P[-f8] -I[testdir/file2] -O[test133]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=133, content='-P[-f9] -I[testdir/file2] -O[test134]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=134, content='-P[-f] -I[testdir/file2] -O[test135]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=135, content='-P[-qrv1] -I[testdir/file2] -O[test136]', partition=0, killableMutants=[1]}
+testcase{test_no=136, content='-P[-qrv2] -I[testdir/file2] -O[test137]', partition=0, killableMutants=[1]}
+testcase{test_no=137, content='-P[-qrv3] -I[testdir/file2] -O[test138]', partition=0, killableMutants=[]}
+testcase{test_no=138, content='-P[-qrv4] -I[testdir/file2] -O[test139]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=139, content='-P[-qrv5] -I[testdir/file2] -O[test140]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=140, content='-P[-qrv6] -I[testdir/file2] -O[test141]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=141, content='-P[-qrv7] -I[testdir/file2] -O[test142]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=142, content='-P[-qrv8] -I[testdir/file2] -O[test143]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=143, content='-P[-qrv9] -I[testdir/file2] -O[test144]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=144, content='-P[-qrv] -I[testdir/file2] -O[test145]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=145, content='-P[-qr1] -I[testdir/file2] -O[test146]', partition=0, killableMutants=[1]}
+testcase{test_no=146, content='-P[-qr2] -I[testdir/file2] -O[test147]', partition=0, killableMutants=[1]}
+testcase{test_no=147, content='-P[-qr3] -I[testdir/file2] -O[test148]', partition=0, killableMutants=[]}
+testcase{test_no=148, content='-P[-qr4] -I[testdir/file2] -O[test149]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=149, content='-P[-qr5] -I[testdir/file2] -O[test150]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=150, content='-P[-qr6] -I[testdir/file2] -O[test151]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=151, content='-P[-qr7] -I[testdir/file2] -O[test152]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=152, content='-P[-qr8] -I[testdir/file2] -O[test153]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=153, content='-P[-qr9] -I[testdir/file2] -O[test154]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=154, content='-P[-qr] -I[testdir/file2] -O[test155]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=155, content='-P[-qv1] -I[testdir/file2] -O[test156]', partition=1, killableMutants=[1]}
+testcase{test_no=156, content='-P[-qv2] -I[testdir/file2] -O[test157]', partition=1, killableMutants=[1]}
+testcase{test_no=157, content='-P[-qv3] -I[testdir/file2] -O[test158]', partition=1, killableMutants=[]}
+testcase{test_no=158, content='-P[-qv4] -I[testdir/file2] -O[test159]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=159, content='-P[-qv5] -I[testdir/file2] -O[test160]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=160, content='-P[-qv6] -I[testdir/file2] -O[test161]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=161, content='-P[-qv7] -I[testdir/file2] -O[test162]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=162, content='-P[-qv8] -I[testdir/file2] -O[test163]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=163, content='-P[-qv9] -I[testdir/file2] -O[test164]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=164, content='-P[-qv] -I[testdir/file2] -O[test165]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=165, content='-P[-q1] -I[testdir/file2] -O[test166]', partition=1, killableMutants=[1]}
+testcase{test_no=166, content='-P[-q2] -I[testdir/file2] -O[test167]', partition=1, killableMutants=[1]}
+testcase{test_no=167, content='-P[-q3] -I[testdir/file2] -O[test168]', partition=1, killableMutants=[]}
+testcase{test_no=168, content='-P[-q4] -I[testdir/file2] -O[test169]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=169, content='-P[-q5] -I[testdir/file2] -O[test170]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=170, content='-P[-q6] -I[testdir/file2] -O[test171]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=171, content='-P[-q7] -I[testdir/file2] -O[test172]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=172, content='-P[-q8] -I[testdir/file2] -O[test173]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=173, content='-P[-q9] -I[testdir/file2] -O[test174]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=174, content='-P[-q] -I[testdir/file2] -O[test175]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=175, content='-P[-rv1] -I[testdir/file2] -O[test176]', partition=0, killableMutants=[1]}
+testcase{test_no=176, content='-P[-rv2] -I[testdir/file2] -O[test177]', partition=0, killableMutants=[1]}
+testcase{test_no=177, content='-P[-rv3] -I[testdir/file2] -O[test178]', partition=0, killableMutants=[]}
+testcase{test_no=178, content='-P[-rv4] -I[testdir/file2] -O[test179]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=179, content='-P[-rv5] -I[testdir/file2] -O[test180]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=180, content='-P[-rv6] -I[testdir/file2] -O[test181]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=181, content='-P[-rv7] -I[testdir/file2] -O[test182]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=182, content='-P[-rv8] -I[testdir/file2] -O[test183]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=183, content='-P[-rv9] -I[testdir/file2] -O[test184]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=184, content='-P[-rv] -I[testdir/file2] -O[test185]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=185, content='-P[-r1] -I[testdir/file2] -O[test186]', partition=0, killableMutants=[1]}
+testcase{test_no=186, content='-P[-r2] -I[testdir/file2] -O[test187]', partition=0, killableMutants=[1]}
+testcase{test_no=187, content='-P[-r3] -I[testdir/file2] -O[test188]', partition=0, killableMutants=[]}
+testcase{test_no=188, content='-P[-r4] -I[testdir/file2] -O[test189]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=189, content='-P[-r5] -I[testdir/file2] -O[test190]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=190, content='-P[-r6] -I[testdir/file2] -O[test191]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=191, content='-P[-r7] -I[testdir/file2] -O[test192]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=192, content='-P[-r8] -I[testdir/file2] -O[test193]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=193, content='-P[-r9] -I[testdir/file2] -O[test194]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=194, content='-P[-r] -I[testdir/file2] -O[test195]', partition=0, killableMutants=[1, 6]}
+testcase{test_no=195, content='-P[-v1] -I[testdir/file2] -O[test196]', partition=1, killableMutants=[1]}
+testcase{test_no=196, content='-P[-v2] -I[testdir/file2] -O[test197]', partition=1, killableMutants=[1]}
+testcase{test_no=197, content='-P[-v3] -I[testdir/file2] -O[test198]', partition=1, killableMutants=[]}
+testcase{test_no=198, content='-P[-v4] -I[testdir/file2] -O[test199]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=199, content='-P[-v5] -I[testdir/file2] -O[test200]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=200, content='-P[-v6] -I[testdir/file2] -O[test201]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=201, content='-P[-v7] -I[testdir/file2] -O[test202]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=202, content='-P[-v8] -I[testdir/file2] -O[test203]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=203, content='-P[-v9] -I[testdir/file2] -O[test204]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=204, content='-P[-v] -I[testdir/file2] -O[test205]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=205, content='-P[-1] -I[testdir/file2] -O[test206]', partition=1, killableMutants=[1]}
+testcase{test_no=206, content='-P[-2] -I[testdir/file2] -O[test207]', partition=1, killableMutants=[1]}
+testcase{test_no=207, content='-P[-3] -I[testdir/file2] -O[test208]', partition=1, killableMutants=[]}
+testcase{test_no=208, content='-P[-4] -I[testdir/file2] -O[test209]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=209, content='-P[-5] -I[testdir/file2] -O[test210]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=210, content='-P[-6] -I[testdir/file2] -O[test211]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=211, content='-P[-7] -I[testdir/file2] -O[test212]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=212, content='-P[-8] -I[testdir/file2] -O[test213]', partition=1, killableMutants=[1, 6]}
+testcase{test_no=213, content='-P[-9] -I[testdir/file2] -O[test214]', partition=1, killableMutants=[1, 6]}
