@@ -6,7 +6,7 @@ import GenerateTestSuit.get_fault_matrix;
 import GenerateTestSuit.get_partition;
 import GenerateTestSuit.testcase;
 import Log.RecordResult;
-import Strategy.RLAPT_S;
+import Strategy.RPT;
 import Util.MeasureRecorder;
 import Util.OnceMeasureRecord;
 import Util.OnceTimeRecord;
@@ -19,11 +19,11 @@ import java.util.stream.Collectors;
 
 /**
  * @author RoFire
- * @date 2020/9/21
+ * @date 2020/11/16
  **/
-public class rlapt_s implements test {
+public class rpt implements test {
     public static void main(String[] args) {
-        rlapt_s test = new rlapt_s();
+        rpt test = new rpt();
         for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
             test.executeTestCase("Make", "v1", repeatTime);
         }
@@ -31,18 +31,19 @@ public class rlapt_s implements test {
 
     @Override
     public void executeTestCase(String program_name, String version, int repeatTimes) {
-// Time Recorder
+
+        // Time Recorder
         TimeRecorder timeRecorder = new TimeRecorder();
 
         // Measure Recorder
         MeasureRecorder measureRecorder = new MeasureRecorder();
 
         for (int i = 0; i < constant.repeatnum; i++) {
-            System.out.println(program_name + " " + version + " use RL-APT_S ; now testing " + String.valueOf(i + 1));
+            System.out.println(program_name + " " + version + " use RPT ; now testing " + String.valueOf(i + 1));
 
-            // initialize RL-APT_S
-            RLAPT_S rlapts = new RLAPT_S();
-            rlapts.initializeRLAPT(constant.get_num_of_partition(program_name));
+            // initialize RPT
+            RPT rpt = new RPT();
+            rpt.initializeRPT(constant.get_num_of_partition(program_name));
 
             // get Mutant List
             List<Integer> used_mutant = Arrays.stream(constant.get_mutant(program_name, version)).boxed().collect(Collectors.toList());
@@ -60,8 +61,6 @@ public class rlapt_s implements test {
             int partitionIndex = 0;
             // an object that records the next_partition_index
             int nextPartitionIndex = 0;
-            // an object that records the next_next_partition_index
-            int nextnextpartitionIndex = 0;
 
             // generate test case set
             testcase[] tc = generate.generate(program_name);
@@ -93,14 +92,8 @@ public class rlapt_s implements test {
                     partitionIndex = new Random().
                             nextInt(constant.get_num_of_partition(program_name));
                 } else {
-                    partitionIndex = nextPartitionIndex;
+                    partitionIndex = rpt.nextPartition4RPT(partitionIndex);
                 }
-
-                // select the next partition
-                nextPartitionIndex = rlapts.nextPartition4RLAPT(program_name, partitionIndex, counter);
-
-                // select the next next partition
-                nextnextpartitionIndex = rlapts.nextPartition4RLAPT(program_name, nextPartitionIndex, counter);
 
                 // select test case
                 while (tc[testseq[j]].getPartition() != partitionIndex && j < constant.testcasenum - 1) {
@@ -136,9 +129,6 @@ public class rlapt_s implements test {
                     break;
                 }
 
-                // Adjust the test profile according to the test result
-                rlapts.adjustRLAPT_S(partitionIndex, nextPartitionIndex, nextnextpartitionIndex, isKilledMutants);
-
                 long end = System.nanoTime();
 
                 // Record the time required
@@ -160,7 +150,7 @@ public class rlapt_s implements test {
         }
 
         // record result in txt
-        String txtLogName = "RL-APT_S_" + program_name + "_" + version + ".txt";
+        String txtLogName = "RPT_" + program_name + "_" + version + ".txt";
         RecordResult.recordResult(txtLogName, repeatTimes, measureRecorder.getAverageFmeasure(), measureRecorder.getAverageF2measure(), timeRecorder.getAverageSelectFirstTestCaseTime() + timeRecorder.getAverageGenerateFirstTestCaseTime() + timeRecorder.getAverageExecuteFirstTestCaseTime(), timeRecorder.getAverageSelectSecondTestCaseTime() + timeRecorder.getAverageGenerateSecondTestCaseTime() + timeRecorder.getAverageExecuteSecondTestCaseTime());
     }
 }

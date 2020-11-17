@@ -80,10 +80,11 @@ public class mapt implements test {
                 // counter increment
                 counter++;
 
+                long start = System.nanoTime();
+
                 /**
                  * select partition and test case
                  */
-                long startSelectTestcase = System.nanoTime();
                 // select partition
                 if (counter == 1) {
                     partitionIndex = new Random().nextInt(constant.get_num_of_partition(program_name));
@@ -96,14 +97,6 @@ public class mapt implements test {
                     j++;
                 }
                 testcase testcasenow = tc[testseq[j]];
-                long endSelectTestcase = System.nanoTime();
-
-                // Record the time required to select test cases (Including generating test cases)
-                if (used_mutant.size() == constant.get_mutant_num(program_name, version)) {
-                    onceTimeRecord.firstSelectionTimePlus(endSelectTestcase - startSelectTestcase);
-                } else if (used_mutant.size() == constant.get_mutant_num(program_name, version) - 1) {
-                    onceTimeRecord.secondSelectionTimePlus(endSelectTestcase - startSelectTestcase);
-                }
 
                 // Flag: indicates whether the test case kills the mutant
                 boolean isKilledMutants = false;
@@ -135,12 +128,19 @@ public class mapt implements test {
 
                 // Adjust the test profile according to the test result
                 mapt.adjustMAPT(partitionIndex, isKilledMutants);
+
+                long end = System.nanoTime();
+
+                // Record the time required
+                if (used_mutant.size() == constant.get_mutant_num(program_name, version)) {
+                    onceTimeRecord.firstSelectionTimePlus(end - start);
+                } else if (used_mutant.size() == constant.get_mutant_num(program_name, version) - 1) {
+                    onceTimeRecord.secondSelectionTimePlus(end - start);
+                }
             }
             measureRecorder.addFMeasure(onceMeasureRecord.getFmeasure());
             measureRecorder.addF2Measure(onceMeasureRecord.getF2measure());
 
-            // Record the time of selection, generation and execution of the corresponding test case
-            // (there is no generation and execution time here)
             timeRecorder.addFirstSelectTestCase(onceTimeRecord.getFirstSelectingTime());
             timeRecorder.addFirstGenerateTestCase(onceTimeRecord.getFirstGeneratingTime());
             timeRecorder.addFirstExecuteTestCase(onceTimeRecord.getFirstExecutingTime());

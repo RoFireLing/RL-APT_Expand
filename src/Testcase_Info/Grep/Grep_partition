@@ -2,7 +2,11 @@ partition_0
 -P[-E '\?' ../inputs/grep1.dat]
 -P[-E -c '[^a-z\]' ../inputs/grep1.dat]
 -P[-E '[1-\]' ../inputs/grep1.dat]
+-P[-E "[[:cntrl:\]\]" ../inputs/grep1.dat]
+-P[-E "[[:digit:\]\]" ../inputs/grep1.dat]
+-P[-E "[[:graph:\]\]" ../inputs/grep1.dat]
 -P[-E '[[:xdigit:\]\]' ../inputs/grep1.dat]
+-P[-E . ../inputs/grep1.dat]
 -P[-E 'b$' ../inputs/grep1.dat]
 -P[-E 'b\>' ../inputs/grep1.dat]
 -P[-E 'b\B' ../inputs/grep1.dat]
@@ -110,12 +114,6 @@ partition_0
 -P[-Ec 'Include|\?' ../inputs/grep*.dat]
 -P[-E 'static'' int' ../inputs/grep*.dat]
 -P[-E '\*preg' ../inputs/grep*.dat]
-sum: 111
-
-partition_1
--P[-E "[[:cntrl:\]\]" ../inputs/grep1.dat]
--P[-E "[[:digit:\]\]" ../inputs/grep1.dat]
--P[-E "[[:graph:\]\]" ../inputs/grep1.dat]
 -P[-E "[\]X\]|end"" -" ../inputs/grep*.dat]
 -P[-E "[\]X\]|end" ../inputs/grep*.dat]
 -P[-E "[\]X\]"" -" ../inputs/grep*.dat]
@@ -246,34 +244,28 @@ partition_1
 -P[-E "\bif a""{1}gout" ../inputs/grep*.dat]
 -P[-E "\bif a({1}""gout)" ../inputs/grep*.dat]
 -P[-E "if a{1}gout\b" ../inputs/grep*.dat]
-sum: 133
-
-partition_2
--P[-E . ../inputs/grep1.dat]
 -P[-Ec static ../inputs/grep*.dat]
-sum: 2
+sum: 246
 
-partition_3
+partition_1
 -P[-F '?' ../inputs/grep1.dat]
 -P[-F '/*#include' ../inputs/grep1.dat]
 -P[-F 'if (out)'  ../inputs/grep*.dat]
-sum: 3
-
-partition_4
 -P[-F "if (gout)"  ../inputs/grep*.dat]
-sum: 1
-
-partition_5
 -P[-F agout ../inputs/grep*.dat]
-sum: 1
+sum: 5
 
-partition_6
+partition_2
+-P[-n I ../inputs/grep1.dat]
+-P[-n 1 ../inputs/grep1.dat]
 -P[-G '\?' ../inputs/grep1.dat]
 -P[-G '?' ../inputs/grep1.dat]
 -P[-G '[1-5\]' ../inputs/grep1.dat]
 -P[-G '[X^YZ\]' ../inputs/grep1.dat]
 -P[-G '\w' ../inputs/grep1.dat]
 -P[-G '[[:alpha:\]\]' ../inputs/grep1.dat]
+-P[-G "[[:lower:\]\]" ../inputs/grep1.dat]
+-P[-G "[[:print:\]\]" ../inputs/grep1.dat]
 -P[-G '[[:punct:\]\]' ../inputs/grep1.dat]
 -P[-G '[[:space:\]\]' ../inputs/grep1.dat]
 -P[-G '[[:upper:\]\]' ../inputs/grep1.dat]
@@ -369,11 +361,6 @@ partition_6
 -P[-Gc 'Include\|?' ../inputs/grep*.dat]
 -P[-G 'static'' int' ../inputs/grep*.dat]
 -P['\*preg' ../inputs/grep*.dat]
-sum: 101
-
-partition_7
--P[-G "[[:lower:\]\]" ../inputs/grep1.dat]
--P[-G "[[:print:\]\]" ../inputs/grep1.dat]
 -P[-G "[\]X\]\|end"" -" ../inputs/grep*.dat]
 -P[-G "\([\]X\]\|end\)"" -" ../inputs/grep*.dat]
 -P[-G "[\]X\]\|end" ../inputs/grep*.dat]
@@ -487,11 +474,6 @@ partition_7
 -P[-G "if a\{1\}g\b\|\bif out" ../inputs/grep*.dat]
 -P[-G "\bif a""\{1\}gout" ../inputs/grep*.dat]
 -P[-G "if a\{1\}gout\b" ../inputs/grep*.dat]
-sum: 115
-
-partition_8
--P[-n I ../inputs/grep1.dat]
--P[-n 1 ../inputs/grep1.dat]
 -P[-Gc static ../inputs/grep*.dat]
-sum: 3
+sum: 219
 

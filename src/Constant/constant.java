@@ -20,9 +20,9 @@ public class constant {
     /**
      * The number of partitions
      */
-    public static final int grep_partition_num = 9;
-    public static final int gzip_partition_num = 6;
-    public static final int make_partition_num = 8;
+    public static final int grep_partition_num = 3;
+    public static final int gzip_partition_num = 4;
+    public static final int make_partition_num = 4;
     /**
      * The number of test cases for each program
      */
@@ -55,7 +55,7 @@ public class constant {
     public static final int[] grep_v2_mutant = {1, 6};
     public static final int[] grep_v3_mutant = {1, 18};
     public static final int[] grep_v4_mutant = {2};
-    public static final int[] gzip_v1_mutant = {2, 14};
+    public static final int[] gzip_v1_mutant = {2, 13, 14};
     public static final int[] gzip_v2_mutant = {3};
     public static final int[] gzip_v4_mutant = {1, 10};
     public static final int[] gzip_v5_mutant = {7, 9, 13};

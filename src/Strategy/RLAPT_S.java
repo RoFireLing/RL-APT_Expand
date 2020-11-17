@@ -1,5 +1,7 @@
 package Strategy;
 
+import Constant.constant;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -29,15 +31,11 @@ public class RLAPT_S {
     }
 
     // get a index of partition (epsilon-greedy)
-    public int nextPartition4RLAPT(int formerPartitionNumber, int noTC) {
+    public int nextPartition4RLAPT(String program_name, int formerPartitionNumber, int noTC) {
         int index = -1;
         double randomNumber = new Random().nextDouble();
-//        double epsilon = 1 / Math.sqrt(noTC);
         double epsilon;
-        if (noTC < 5 * RLAPT.length)
-            epsilon = 1 - 0.1 * (noTC / RLAPT.length);
-        else
-            epsilon = 0.5;
+        epsilon = 1 - (double) noTC / constant.get_tc_num(program_name);
 
         if (randomNumber <= epsilon) {
             index = new Random().nextInt(RLAPT.length);

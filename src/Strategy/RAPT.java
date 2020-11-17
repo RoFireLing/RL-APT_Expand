@@ -7,9 +7,10 @@ import java.util.Random;
  * @date 2020/9/21
  **/
 public class RAPT {
-    private static final int[] pun4Grep = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-    private static final int[] pun4Gzip = {0, 0, 0, 0, 0, 0};
-    private static final int[] pun4Make = {0, 0, 0, 0, 0, 0, 0, 0};
+    // 70% testcases in each partition
+    private static final int[] pun4Grep = {173, 4, 154};
+    private static final int[] pun4Gzip = {143, 3, 4, 2};
+    private static final int[] pun4Make = {135, 135, 135, 152};
 
     /**
      * the test profile of RAPT
@@ -150,15 +151,25 @@ public class RAPT {
     }
 
 
-    public void setParameters4RAPT(String program_name) {
+    public void setParameters4RAPT(String program_name, String version) {
         if (program_name.equals("Grep")) {
-            setRAPT_delta(0);
+            if (version.equals("v1")) setRAPT_delta(4.0017852457362E-4);
+            else if (version.equals("v2")) setRAPT_delta(0);
+            else if (version.equals("v3")) setRAPT_delta(0);
+            else if (version.equals("v4")) setRAPT_delta(0);
+            else setRAPT_delta(0);
             setBou_RAPT(program_name, pun4Grep);
         } else if (program_name.equals("Gzip")) {
-            setRAPT_delta(0);
+            if (version.equals("v1")) setRAPT_delta(0);
+            else if (version.equals("v2")) setRAPT_delta(0);
+            else if (version.equals("v4")) setRAPT_delta(0);
+            else if (version.equals("v5")) setRAPT_delta(0);
+            else setRAPT_delta(0);
             setBou_RAPT(program_name, pun4Gzip);
         } else if (program_name.equals("Make")) {
-            setRAPT_delta(0);
+            if (version.equals("v1")) setRAPT_delta(0);
+            else if (version.equals("v2")) setRAPT_delta(0);
+            else setRAPT_delta(0);
             setBou_RAPT(program_name, pun4Make);
         }
     }

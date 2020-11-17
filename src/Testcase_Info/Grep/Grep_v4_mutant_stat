@@ -1,2 +1,8 @@
-Mutant_2: 2: 0.00425531914893617
-Mutant_12: 132: 0.28085106382978725
+Mutant_2
+The number of test cases that can kill the variant: 2
+Failure Rate: 0.00425531914893617
+
+Mutant_12
+The number of test cases that can kill the variant: 132
+Failure Rate: 0.28085106382978725
+

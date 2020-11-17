@@ -1,0 +1,154 @@
+Grep_v1
+Partition0
+The number of test cases in this partition: 246
+Failure Rate: 0.0040650406504065045
+
+Partition1
+The number of test cases in this partition: 5
+Failure Rate: 0.0
+
+Partition2
+The number of test cases in this partition: 219
+Failure Rate: 0.0091324200913242
+
+Grep_v2
+Partition0
+The number of test cases in this partition: 246
+Failure Rate: 0.07317073170731707
+
+Partition1
+The number of test cases in this partition: 5
+Failure Rate: 0.0
+
+Partition2
+The number of test cases in this partition: 219
+Failure Rate: 0.091324200913242
+
+Grep_v3
+Partition0
+The number of test cases in this partition: 246
+Failure Rate: 0.016260162601626018
+
+Partition1
+The number of test cases in this partition: 5
+Failure Rate: 0.0
+
+Partition2
+The number of test cases in this partition: 219
+Failure Rate: 0.0410958904109589
+
+Grep_v4
+Partition0
+The number of test cases in this partition: 246
+Failure Rate: 0.0040650406504065045
+
+Partition1
+The number of test cases in this partition: 5
+Failure Rate: 0.0
+
+Partition2
+The number of test cases in this partition: 219
+Failure Rate: 0.0045662100456621
+
+Gzip_v1
+Partition0
+The number of test cases in this partition: 203
+Failure Rate: 0.0049261083743842365
+
+Partition1
+The number of test cases in this partition: 4
+Failure Rate: 0.75
+
+Partition2
+The number of test cases in this partition: 5
+Failure Rate: 0.2
+
+Partition3
+The number of test cases in this partition: 2
+Failure Rate: 0.0
+
+Gzip_v2
+Partition0
+The number of test cases in this partition: 203
+Failure Rate: 0.06403940886699508
+
+Partition1
+The number of test cases in this partition: 4
+Failure Rate: 0.0
+
+Partition2
+The number of test cases in this partition: 5
+Failure Rate: 0.0
+
+Partition3
+The number of test cases in this partition: 2
+Failure Rate: 0.0
+
+Gzip_v4
+Partition0
+The number of test cases in this partition: 203
+Failure Rate: 0.0049261083743842365
+
+Partition1
+The number of test cases in this partition: 4
+Failure Rate: 0.0
+
+Partition2
+The number of test cases in this partition: 5
+Failure Rate: 0.2
+
+Partition3
+The number of test cases in this partition: 2
+Failure Rate: 0.0
+
+Gzip_v5
+Partition0
+The number of test cases in this partition: 203
+Failure Rate: 0.009852216748768473
+
+Partition1
+The number of test cases in this partition: 4
+Failure Rate: 0.75
+
+Partition2
+The number of test cases in this partition: 5
+Failure Rate: 0.0
+
+Partition3
+The number of test cases in this partition: 2
+Failure Rate: 0.0
+
+Make_v1
+Partition0
+The number of test cases in this partition: 192
+Failure Rate: 0.0
+
+Partition1
+The number of test cases in this partition: 192
+Failure Rate: 0.0
+
+Partition2
+The number of test cases in this partition: 192
+Failure Rate: 0.0
+
+Partition3
+The number of test cases in this partition: 217
+Failure Rate: 0.03686635944700461
+
+Make_v2
+Partition0
+The number of test cases in this partition: 192
+Failure Rate: 0.0
+
+Partition1
+The number of test cases in this partition: 192
+Failure Rate: 0.0
+
+Partition2
+The number of test cases in this partition: 192
+Failure Rate: 0.0
+
+Partition3
+The number of test cases in this partition: 217
+Failure Rate: 0.009216589861751152
+

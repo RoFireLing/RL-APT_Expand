@@ -31,27 +31,27 @@ public class executor {
         String version = "v1";
 
         // Design Pattern-Factory Pattern
-//        test_factory tcf = new test_factory();
-//        String[] strategy = {"DRT", "MAPT", "RAPT", "RLAPT_Q", "RLAPT_S"};
-//        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
-//            for (String s : strategy) {
-//                test executor = tcf.getTest(s);
-//                executor.executeTestCase(program_name, version, repeatTime);
-//            }
-//        }
-
-        rlapt_q qtest = new rlapt_q();
+        test_factory tcf = new test_factory();
+        String[] strategy = {"RPT", "DRT", "MAPT", "RAPT", "RLAPT_Q", "RLAPT_S"};
         for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
-            qtest.executeTestCase(program_name, version, repeatTime);
+            for (String s : strategy) {
+                test executor = tcf.getTest(s);
+                executor.executeTestCase(program_name, version, repeatTime);
+            }
         }
+
+//        rlapt_q qtest = new rlapt_q();
+//        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
+//            qtest.executeTestCase(program_name, version, repeatTime);
+//        }
 //        rlapt_s stest = new rlapt_s();
 //        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
 //            stest.executeTestCase(program_name, version, repeatTime);
 //        }
-        mapt mtest = new mapt();
-        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
-            mtest.executeTestCase(program_name, version, repeatTime);
-        }
+//        mapt mtest = new mapt();
+//        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
+//            mtest.executeTestCase(program_name, version, repeatTime);
+//        }
 //        rapt rtest = new rapt();
 //        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
 //            rtest.executeTestCase(program_name, version, repeatTime);
@@ -59,6 +59,10 @@ public class executor {
 //        drt dtest = new drt();
 //        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
 //            dtest.executeTestCase(program_name, version, repeatTime);
+//        }
+//        rpt rptest = new rpt();
+//        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
+//            rptest.executeTestCase(program_name, version, repeatTime);
 //        }
     }
 }

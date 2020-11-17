@@ -1,8 +1,6 @@
 # RL-APT_Expand
 This is an extended experiment on RL-APT, the experimental subjects include Grep; Gzip; Make (three C programs)
 
-## Algorithm Only
-This package contains the basic algorithms of RL-APT
 ## Constant
 The default value of the parameters
 ## Strategy

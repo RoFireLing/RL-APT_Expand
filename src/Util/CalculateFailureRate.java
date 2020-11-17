@@ -1,4 +1,4 @@
-package Testcase_Info;
+package Util;
 
 import Constant.constant;
 import GenerateTestSuit.generate;
@@ -10,15 +10,18 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.io.File.separator;
 
 /**
  * @author RoFire
- * @date 2020/9/28
+ * @date 2020/11/17
  **/
-public class get_mutant_info {
-    public static void get_mutant_info(String program_name, String version) throws IOException {
+public class CalculateFailureRate {
+    public static void get_failure_rate(String program_name, String version) throws IOException {
         /**
          * get tc
          */
@@ -28,37 +31,32 @@ public class get_mutant_info {
         get_fault_matrix gfm = new get_fault_matrix();
         gfm.get_fm(tc, program_name, version);
 
-        String path = System.getProperty("user.dir") + separator + "src" + separator + "Testcase_Info" + separator + program_name + separator + program_name + "_" + version + "_mutant_stat";
+        String path = System.getProperty("user.dir") + separator + "src" + separator + "Testcase_Info" + separator + "Failure Rate stat";
         File file = new File(path);
         PrintWriter printWriter = null;
 
         /**
          * record txt
          */
-        // killable mutant stat.
-        int[] mutant_stat = new int[constant.get_all_mutant_num(program_name, version)];
-        int mutant_sum = 0;
-        if (program_name == "Grep") {
-            mutant_sum = 470;
-        }
-        if (program_name == "Gzip") {
-            mutant_sum = 214;
-        }
-        if (program_name == "Make") {
-            mutant_sum = 793;
-        }
+        // failure rate stat.
+        int[] mutant_stat = new int[constant.get_num_of_partition(program_name)];
+        int[] tcnum = new int[constant.get_num_of_partition(program_name)];
+        List<Integer> used_mutant = Arrays.stream(constant.get_mutant(program_name, version)).boxed().collect(Collectors.toList());
         for (testcase t : tc) {
-            for (int i = 0; i < t.getKillableMutants().size(); i++) {
-                mutant_stat[t.getKillableMutants().get(i) - 1]++;
+            tcnum[t.getPartition()]++;
+            List<Integer> killable_mutant = t.getKillableMutants();
+            killable_mutant.retainAll(used_mutant);
+            if (killable_mutant.size() != 0) {
+                mutant_stat[t.getPartition()]++;
             }
         }
+
+        printWriter = new PrintWriter(new FileWriter(file, true));
+        printWriter.write(program_name + "_" + version + "\n");
         for (int i = 0; i < mutant_stat.length; i++) {
-            if (mutant_stat[i] != 0) {
-                printWriter = new PrintWriter(new FileWriter(file, true));
-                printWriter.write("Mutant_" + String.valueOf(i + 1) + "\nThe number of test cases that can kill the variant: " + String.valueOf(mutant_stat[i]) + "\nFailure Rate: " + String.valueOf((double) mutant_stat[i] / (double) mutant_sum) + "\n\n");
-                printWriter.close();
-            }
+            printWriter.write("Partition" + String.valueOf(i) + "\nThe number of test cases in this partition: " + String.valueOf(tcnum[i]) + "\nFailure Rate: " + String.valueOf((double) mutant_stat[i] / (double) tcnum[i]) + "\n\n");
         }
+        printWriter.close();
     }
 
     public static void main(String[] args) throws IOException {
@@ -67,17 +65,17 @@ public class get_mutant_info {
             if (s == "Grep") {
                 String[] version = {"v1", "v2", "v3", "v4"};
                 for (String v : version) {
-                    get_mutant_info(s, v);
+                    get_failure_rate(s, v);
                 }
             } else if (s == "Gzip") {
                 String[] version = {"v1", "v2", "v4", "v5"};
                 for (String v : version) {
-                    get_mutant_info(s, v);
+                    get_failure_rate(s, v);
                 }
             } else {
                 String[] version = {"v1", "v2"};
                 for (String v : version) {
-                    get_mutant_info(s, v);
+                    get_failure_rate(s, v);
                 }
             }
         }

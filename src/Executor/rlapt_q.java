@@ -82,10 +82,11 @@ public class rlapt_q implements test {
                 // counter increment
                 counter++;
 
+                long start = System.nanoTime();
+
                 /**
                  * select partition and test case
                  */
-                long startSelectTestcase = System.nanoTime();
                 // select partition
                 if (counter == 1) {
                     partitionIndex = new Random().
@@ -95,21 +96,13 @@ public class rlapt_q implements test {
                 }
 
                 // select the next partition
-                nextPartitionIndex = rlaptq.nextPartition4RLAPT(partitionIndex, counter);
+                nextPartitionIndex = rlaptq.nextPartition4RLAPT(program_name, partitionIndex, counter);
 
                 // select test case
                 while (tc[testseq[j]].getPartition() != partitionIndex && j < constant.testcasenum - 1) {
                     j++;
                 }
                 testcase testcasenow = tc[testseq[j]];
-                long endSelectTestcase = System.nanoTime();
-
-                // Record the time required to select test cases (Including generating test cases)
-                if (used_mutant.size() == constant.get_mutant_num(program_name, version)) {
-                    onceTimeRecord.firstSelectionTimePlus(endSelectTestcase - startSelectTestcase);
-                } else if (used_mutant.size() == constant.get_mutant_num(program_name, version) - 1) {
-                    onceTimeRecord.secondSelectionTimePlus(endSelectTestcase - startSelectTestcase);
-                }
 
                 // Flag: indicates whether the test case kills the mutant
                 boolean isKilledMutants = false;
@@ -141,12 +134,19 @@ public class rlapt_q implements test {
 
                 // Adjust the test profile according to the test result
                 rlaptq.adjustRLAPT_Q(partitionIndex, nextPartitionIndex, isKilledMutants);
+
+                long end = System.nanoTime();
+
+                // Record the time required
+                if (used_mutant.size() == constant.get_mutant_num(program_name, version)) {
+                    onceTimeRecord.firstSelectionTimePlus(end - start);
+                } else if (used_mutant.size() == constant.get_mutant_num(program_name, version) - 1) {
+                    onceTimeRecord.secondSelectionTimePlus(end - start);
+                }
             }
             measureRecorder.addFMeasure(onceMeasureRecord.getFmeasure());
             measureRecorder.addF2Measure(onceMeasureRecord.getF2measure());
 
-            // Record the time of selection, generation and execution of the corresponding test case
-            // (there is no generation and execution time here)
             timeRecorder.addFirstSelectTestCase(onceTimeRecord.getFirstSelectingTime());
             timeRecorder.addFirstGenerateTestCase(onceTimeRecord.getFirstGeneratingTime());
             timeRecorder.addFirstExecuteTestCase(onceTimeRecord.getFirstExecutingTime());

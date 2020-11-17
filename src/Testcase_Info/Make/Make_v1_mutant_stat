@@ -1,4 +1,16 @@
-Mutant_10: 691: 0.8713745271122321
-Mutant_13: 5: 0.006305170239596469
-Mutant_15: 3: 0.0037831021437578815
-Mutant_16: 385: 0.4854981084489281
+Mutant_10
+The number of test cases that can kill the variant: 691
+Failure Rate: 0.8713745271122321
+
+Mutant_13
+The number of test cases that can kill the variant: 5
+Failure Rate: 0.006305170239596469
+
+Mutant_15
+The number of test cases that can kill the variant: 3
+Failure Rate: 0.0037831021437578815
+
+Mutant_16
+The number of test cases that can kill the variant: 385
+Failure Rate: 0.4854981084489281
+

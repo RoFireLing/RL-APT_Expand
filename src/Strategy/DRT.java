@@ -92,7 +92,23 @@ public class DRT {
         }
     }
 
-    public void setParameters4DRT(String programe_name) {
-
+    public void setParameters4DRT(String program_name, String version) {
+        if (program_name.equals("Grep")) {
+            if (version.equals("v1")) setDRT_delta(4.0017852457362E-4);
+            else if (version.equals("v2")) setDRT_delta(0);
+            else if (version.equals("v3")) setDRT_delta(0);
+            else if (version.equals("v4")) setDRT_delta(0);
+            else setDRT_delta(0);
+        } else if (program_name.equals("Gzip")) {
+            if (version.equals("v1")) setDRT_delta(0);
+            else if (version.equals("v2")) setDRT_delta(0);
+            else if (version.equals("v3")) setDRT_delta(0);
+            else if (version.equals("v4")) setDRT_delta(0);
+            else setDRT_delta(0);
+        } else if (program_name.equals("Make")) {
+            if (version.equals("v1")) setDRT_delta(0);
+            else if (version.equals("v2")) setDRT_delta(0);
+            else setDRT_delta(0);
+        }
     }
 }
