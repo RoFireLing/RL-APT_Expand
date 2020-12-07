@@ -18,11 +18,11 @@ Mainly used to read
 ## Log
 Mainly used to record
 ## Util
-Tools for recording time and measurement values
+- Tools for recording time and measurement values
+- CalculateDelta：calculate delta for DRT and RAPT
+- CalculateFailureRate：calculate failure rate of each partition
 
 ## Program_Info
 Source program information
 ## Testcases_Info
 Test case information
-## Result
-The test result

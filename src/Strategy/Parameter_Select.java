@@ -6,15 +6,15 @@ import java.util.Random;
 
 /**
  * @author RoFire
- * @date 2020/9/21
+ * @date 2020/11/23
  **/
-public class RLAPT_S {
+public class Parameter_Select {
     // param of RL-APT
     private double[][] RLAPT;
 
-    private double RLAPT_alpha;
+//    private double RLAPT_alpha;
 
-    private double RLAPT_gamma = 0.5;
+//    private double RLAPT_gamma;
 
     private double RLAPT_r0 = 1;
 
@@ -30,6 +30,7 @@ public class RLAPT_S {
 
     // get index of the next partition
     public int nextPartition4RLAPT(String program_name, int formerPartitionNumber, int noTC) {
+        // epsilon-greedy
         int index = -1;
         double randomNumber = new Random().nextDouble();
         double epsilon;
@@ -42,11 +43,9 @@ public class RLAPT_S {
         return index;
     }
 
-    // adjust the Q-table for RLAPT testing based on SARSA
-    // NextPartitionIndex = nextPartition4RLAPT(NowPartitionIndex, noTC)
-    // NextNextPartitionIndex = nextPartition4RLAPT(NextPartitionIndex, noTC)
-    public void adjustRLAPT_S(int noTC, int NowPartitionIndex, int NextPartitionIndex, int NextNextPartitionIndex, boolean isKilledMutans) {
-        RLAPT_alpha = 1.0 / noTC;
+    // adjust the Q-table for RLAPT testing based on Q-Learning
+    public void adjustRLAPT_Q(int noTC, double gamma, int NowPartitionIndex, int NextPartitionIndex, boolean isKilledMutans) {
+        double alpha = 1.0 / noTC;
         double r = 0;
         if (NowPartitionIndex == NextPartitionIndex) {
             if (isKilledMutans) {
@@ -59,9 +58,8 @@ public class RLAPT_S {
             } else
                 r = RLAPT_r0 / (RLAPT.length - 1);
         }
-        RLAPT[NowPartitionIndex][NextPartitionIndex] += RLAPT_alpha
-                * (r + RLAPT_gamma * RLAPT[NextPartitionIndex][NextNextPartitionIndex]
-                - RLAPT[NowPartitionIndex][NextPartitionIndex]);
+        RLAPT[NowPartitionIndex][NextPartitionIndex] += alpha * (r
+                + gamma * getMax(RLAPT[NextPartitionIndex])[0] - RLAPT[NowPartitionIndex][NextPartitionIndex]);
     }
 
     // get MaxValue or MaxValueIndex

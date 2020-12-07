@@ -14,7 +14,6 @@ import Util.TimeRecorder;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 /**
@@ -59,8 +58,6 @@ public class rpt implements test {
 
             // an object that records the partition_index
             int partitionIndex = 0;
-            // an object that records the next_partition_index
-            int nextPartitionIndex = 0;
 
             // generate test case set
             testcase[] tc = generate.generate(program_name);
@@ -82,17 +79,19 @@ public class rpt implements test {
                 // counter increment
                 counter++;
 
-                long start = System.nanoTime();
-
                 /**
                  * select partition and test case
                  */
+                long start = System.nanoTime();
                 // select partition
-                if (counter == 1) {
-                    partitionIndex = new Random().
-                            nextInt(constant.get_num_of_partition(program_name));
-                } else {
-                    partitionIndex = rpt.nextPartition4RPT(partitionIndex);
+                partitionIndex = rpt.nextPartition4RPT();
+                long end = System.nanoTime();
+
+                // Record the time required -> select
+                if (used_mutant.size() == constant.get_mutant_num(program_name, version)) {
+                    onceTimeRecord.firstSelectionTimePlus(end - start);
+                } else if (used_mutant.size() == constant.get_mutant_num(program_name, version) - 1) {
+                    onceTimeRecord.secondSelectionTimePlus(end - start);
                 }
 
                 // select test case
@@ -124,33 +123,40 @@ public class rpt implements test {
                     }
                 }
 
+                long start2 = System.nanoTime();
                 // All mutants are killed and the test is over
                 if (used_mutant.size() == 0) {
                     break;
                 }
+                long end2 = System.nanoTime();
 
-                long end = System.nanoTime();
-
-                // Record the time required
+                // Record the time required -> adjust
                 if (used_mutant.size() == constant.get_mutant_num(program_name, version)) {
-                    onceTimeRecord.firstSelectionTimePlus(end - start);
+                    onceTimeRecord.firstExecutingTime(end2 - start2);
                 } else if (used_mutant.size() == constant.get_mutant_num(program_name, version) - 1) {
-                    onceTimeRecord.secondSelectionTimePlus(end - start);
+                    onceTimeRecord.secondExecutingTime(end2 - start2);
                 }
             }
-            measureRecorder.addFMeasure(onceMeasureRecord.getFmeasure());
-            measureRecorder.addF2Measure(onceMeasureRecord.getF2measure());
+            if (constant.get_mutant_num(program_name, version) == 1 || onceMeasureRecord.getF2measure() != 0) {
+                measureRecorder.addFMeasure(onceMeasureRecord.getFmeasure());
+                measureRecorder.addF2Measure(onceMeasureRecord.getF2measure());
 
-            timeRecorder.addFirstSelectTestCase(onceTimeRecord.getFirstSelectingTime());
-            timeRecorder.addFirstGenerateTestCase(onceTimeRecord.getFirstGeneratingTime());
-            timeRecorder.addFirstExecuteTestCase(onceTimeRecord.getFirstExecutingTime());
-            timeRecorder.addSecondSelectTestCase(onceTimeRecord.getSecondSelectingTime());
-            timeRecorder.addSecondGenerateTestCase(onceTimeRecord.getSecondGeneratingTime());
-            timeRecorder.addSecondExecuteTestCase(onceTimeRecord.getSecondExecutingTime());
+                timeRecorder.addFirstSelectTestCase(onceTimeRecord.getFirstSelectingTime());
+                timeRecorder.addFirstGenerateTestCase(onceTimeRecord.getFirstGeneratingTime());
+                timeRecorder.addFirstExecuteTestCase(onceTimeRecord.getFirstExecutingTime());
+                timeRecorder.addSecondSelectTestCase(onceTimeRecord.getSecondSelectingTime());
+                timeRecorder.addSecondGenerateTestCase(onceTimeRecord.getSecondGeneratingTime());
+                timeRecorder.addSecondExecuteTestCase(onceTimeRecord.getSecondExecutingTime());
+            }
+            if (measureRecorder.getFmeasureArray().size() < 30 && i == constant.repeatnum - 1) {
+                i--;
+            }
         }
 
         // record result in txt
         String txtLogName = "RPT_" + program_name + "_" + version + ".txt";
         RecordResult.recordResult(txtLogName, repeatTimes, measureRecorder.getAverageFmeasure(), measureRecorder.getAverageF2measure(), timeRecorder.getAverageSelectFirstTestCaseTime() + timeRecorder.getAverageGenerateFirstTestCaseTime() + timeRecorder.getAverageExecuteFirstTestCaseTime(), timeRecorder.getAverageSelectSecondTestCaseTime() + timeRecorder.getAverageGenerateSecondTestCaseTime() + timeRecorder.getAverageExecuteSecondTestCaseTime());
+        String txtSpecificName = "RPT_" + program_name + "_" + version + "_Content.txt";
+        RecordResult.SpecificResult(txtSpecificName, repeatTimes, measureRecorder.getFmeasureArray(), measureRecorder.getF2measureArray(), timeRecorder.getFirstTotalArray(), timeRecorder.getSecondTotalArray());
     }
 }

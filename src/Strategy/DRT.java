@@ -56,12 +56,9 @@ public class DRT {
      * @param formerSourcePartitionIndex
      * @param isKilledMutans
      */
-    public void adjustDRT(int formerSourcePartitionIndex,
-                          boolean isKilledMutans) {
-        //the source test case and follow-up test case belong to the same partition
-
+    public void adjustDRT(int formerSourcePartitionIndex, boolean isKilledMutans) {
         // the test case killed a mutant
-        if (isKilledMutans) { //same partition and killed a mutant
+        if (isKilledMutans) {
             double sum = 0;
             double threshold = DRT_epsilon / (DRT.length - 1);
             for (int i = 0; i < DRT.length; i++) {
@@ -75,7 +72,8 @@ public class DRT {
                 sum += DRT[i];
             }
             DRT[formerSourcePartitionIndex] = 1 - sum;
-        } else { // same partition and do not kill a mutant
+        } else {
+            //do not kill a mutant
             double threshod;
             if (DRT[formerSourcePartitionIndex] >= DRT_delta) {
                 threshod = DRT_delta / (DRT.length - 1);
@@ -94,20 +92,20 @@ public class DRT {
 
     public void setParameters4DRT(String program_name, String version) {
         if (program_name.equals("Grep")) {
-            if (version.equals("v1")) setDRT_delta(4.0017852457362E-4);
-            else if (version.equals("v2")) setDRT_delta(0);
-            else if (version.equals("v3")) setDRT_delta(0);
-            else if (version.equals("v4")) setDRT_delta(0);
+            if (version.equals("v1")) setDRT_delta(4.0947992100065836E-4);
+            else if (version.equals("v2")) setDRT_delta(0.004809574186723089);
+            else if (version.equals("v3")) setDRT_delta(0.001879574970484061);
+            else if (version.equals("v4")) setDRT_delta(2.2430256506272232E-4);
             else setDRT_delta(0);
         } else if (program_name.equals("Gzip")) {
-            if (version.equals("v1")) setDRT_delta(0);
-            else if (version.equals("v2")) setDRT_delta(0);
-            else if (version.equals("v3")) setDRT_delta(0);
-            else if (version.equals("v4")) setDRT_delta(0);
+            if (version.equals("v1")) setDRT_delta(0.12250000000000001);
+            else if (version.equals("v2")) setDRT_delta(0.0027368421052631586);
+            else if (version.equals("v4")) setDRT_delta(0.010049504950495051);
+            else if (version.equals("v5")) setDRT_delta(0.12009950248756222);
             else setDRT_delta(0);
         } else if (program_name.equals("Make")) {
-            if (version.equals("v1")) setDRT_delta(0);
-            else if (version.equals("v2")) setDRT_delta(0);
+            if (version.equals("v1")) setDRT_delta(0.0015311004784688996);
+            else if (version.equals("v2")) setDRT_delta(3.7209302325581393E-4);
             else setDRT_delta(0);
         }
     }

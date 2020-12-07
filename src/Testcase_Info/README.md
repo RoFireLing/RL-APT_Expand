@@ -6,3 +6,6 @@ This file records the number of test cases in each partition and the specific co
 This file records the specific information of each version of the test case (including its content, partition and killable mutants index)
 - ProgramName_version_mutant_stat  
 This file records statistics about the killable mutants of each version  
+
+## Failure Rate Stat.
+The partition failure rates of different programs and versions

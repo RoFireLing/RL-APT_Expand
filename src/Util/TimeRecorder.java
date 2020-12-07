@@ -21,6 +21,9 @@ public class TimeRecorder {
     private List<Long> firstExecuteTestCaseArray;
     private List<Long> secondExecuteTestCaseArray;
 
+    private List<Long> firstTotalArray;
+    private List<Long> secondTotalArray;
+
     private DecimalFormat decimalFormat;
 
     public TimeRecorder() {
@@ -177,5 +180,24 @@ public class TimeRecorder {
 
     public List<Long> getSecondExecuteTestCaseArray() {
         return secondExecuteTestCaseArray;
+    }
+
+    /**
+     * get T/T2 list
+     */
+    public List<Long> getFirstTotalArray() {
+        List<Long> TArray = new ArrayList<>();
+        for (int i = 0; i < firstSelectTestCaseArray.size(); i++) {
+            TArray.add(firstSelectTestCaseArray.get(i) + firstGenerateTestCaseArray.get(i) + firstExecuteTestCaseArray.get(i));
+        }
+        return TArray;
+    }
+
+    public List<Long> getSecondTotalArray() {
+        List<Long> T2Array = new ArrayList<>();
+        for (int i = 0; i < secondSelectTestCaseArray.size(); i++) {
+            T2Array.add(secondSelectTestCaseArray.get(i) + secondGenerateTestCaseArray.get(i) + secondExecuteTestCaseArray.get(i));
+        }
+        return T2Array;
     }
 }

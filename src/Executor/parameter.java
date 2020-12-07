@@ -6,7 +6,7 @@ import GenerateTestSuit.get_fault_matrix;
 import GenerateTestSuit.get_partition;
 import GenerateTestSuit.testcase;
 import Log.RecordResult;
-import Strategy.DRT;
+import Strategy.Parameter_Select;
 import Util.MeasureRecorder;
 import Util.OnceMeasureRecord;
 import Util.OnceTimeRecord;
@@ -19,18 +19,32 @@ import java.util.stream.Collectors;
 
 /**
  * @author RoFire
- * @date 2020/9/21
+ * @date 2020/11/23
  **/
-public class drt implements test {
+public class parameter {
     public static void main(String[] args) {
-        drt test = new drt();
-        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
-            test.executeTestCase("Make", "v1", repeatTime);
+        parameter test = new parameter();
+        genearate_testseq();
+        double gammaset[] = {1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0};
+        for (double gamma : gammaset) {
+            for (int repeatTime = 0; repeatTime < 20; repeatTime++) {
+                test.Param_Select("Grep", "v4", repeatTime, gamma);
+            }
         }
     }
 
-    @Override
-    public void executeTestCase(String program_name, String version, int repeatTimes) {
+    /**
+     * initialize test sequence
+     */
+    public static void genearate_testseq() {
+        int[] testseq = new int[constant.testcasenum];
+        for (int s = 0; s < testseq.length; s++) {
+            testseq[s] = new Random().nextInt(1000);
+        }
+        constant.setTestseq(testseq);
+    }
+
+    public void Param_Select(String program_name, String version, int repeatTimes, double gamma) {
 
         // Time Recorder
         TimeRecorder timeRecorder = new TimeRecorder();
@@ -39,12 +53,11 @@ public class drt implements test {
         MeasureRecorder measureRecorder = new MeasureRecorder();
 
         for (int i = 0; i < constant.repeatnum; i++) {
-            System.out.println(program_name + " " + version + " use DRT ; now testing " + String.valueOf(i + 1));
+            System.out.println(program_name + " " + version + " ; now testing " + String.valueOf(i + 1));
 
-            // initialize DRT
-            DRT drt = new DRT();
-            drt.setParameters4DRT(program_name, version);
-            drt.initializeDRT(constant.get_num_of_partition(program_name));
+            // initialize RL-APT
+            Parameter_Select param = new Parameter_Select();
+            param.initializeRLAPT(constant.get_num_of_partition(program_name));
 
             // get Mutant List
             List<Integer> used_mutant = Arrays.stream(constant.get_mutant(program_name, version)).boxed().collect(Collectors.toList());
@@ -60,6 +73,8 @@ public class drt implements test {
 
             // an object that records the partition_index
             int partitionIndex = 0;
+            // an object that records the next_partition_index
+            int nextPartitionIndex = 0;
 
             // generate test case set
             testcase[] tc = generate.generate(program_name);
@@ -68,10 +83,6 @@ public class drt implements test {
 
 
             // generate test seq
-//            int[] testseq = new int[constant.testcasenum];
-//            for (int s = 0; s < testseq.length; s++) {
-//                testseq[s] = new Random().nextInt(constant.get_tc_num(program_name));
-//            }
             int[] testseq = constant.getTestseq();
             for (int s = 0; s < testseq.length; s++) {
                 testseq[s] = testseq[s] % constant.get_tc_num(program_name);
@@ -87,10 +98,14 @@ public class drt implements test {
                 long start = System.nanoTime();
                 // select partition
                 if (counter == 1) {
-                    partitionIndex = new Random().nextInt(constant.get_num_of_partition(program_name));
+                    partitionIndex = new Random().
+                            nextInt(constant.get_num_of_partition(program_name));
                 } else {
-                    partitionIndex = drt.nextPartition4DRT();
+                    partitionIndex = nextPartitionIndex;
                 }
+
+                // select the next partition
+                nextPartitionIndex = param.nextPartition4RLAPT(program_name, partitionIndex, counter);
                 long end = System.nanoTime();
 
                 // Record the time required -> select
@@ -135,8 +150,8 @@ public class drt implements test {
                 }
 
                 long start2 = System.nanoTime();
-                // Adjust the test profile according to the test result
-                drt.adjustDRT(partitionIndex, isKilledMutants);
+                // Adjust the Q-table according to the test result
+                param.adjustRLAPT_Q(counter, gamma, partitionIndex, nextPartitionIndex, isKilledMutants);
                 long end2 = System.nanoTime();
 
                 // Record the time required -> adjust
@@ -163,9 +178,9 @@ public class drt implements test {
         }
 
         // record result in txt
-        String txtLogName = "DRT_" + program_name + "_" + version + ".txt";
-        RecordResult.recordResult(txtLogName, repeatTimes, measureRecorder.getAverageFmeasure(), measureRecorder.getAverageF2measure(), timeRecorder.getAverageSelectFirstTestCaseTime() + timeRecorder.getAverageGenerateFirstTestCaseTime() + timeRecorder.getAverageExecuteFirstTestCaseTime(), timeRecorder.getAverageSelectSecondTestCaseTime() + timeRecorder.getAverageGenerateSecondTestCaseTime() + timeRecorder.getAverageExecuteSecondTestCaseTime());
-        String txtSpecificName = "DRT_" + program_name + "_" + version + "_Content.txt";
-        RecordResult.SpecificResult(txtSpecificName, repeatTimes, measureRecorder.getFmeasureArray(), measureRecorder.getF2measureArray(), timeRecorder.getFirstTotalArray(), timeRecorder.getSecondTotalArray());
+        String txtLogName = program_name + "_" + version + ".txt";
+        RecordResult.ParamResult(txtLogName, gamma, repeatTimes, measureRecorder.getAverageFmeasure(), measureRecorder.getAverageF2measure(), timeRecorder.getAverageSelectFirstTestCaseTime() + timeRecorder.getAverageGenerateFirstTestCaseTime() + timeRecorder.getAverageExecuteFirstTestCaseTime(), timeRecorder.getAverageSelectSecondTestCaseTime() + timeRecorder.getAverageGenerateSecondTestCaseTime() + timeRecorder.getAverageExecuteSecondTestCaseTime());
+        String txtSpecificName = program_name + "_" + version + "_contents.txt";
+        RecordResult.ParamSpecificResult(txtSpecificName, gamma, repeatTimes, measureRecorder.getFmeasureArray(), measureRecorder.getF2measureArray(), timeRecorder.getFirstTotalArray(), timeRecorder.getSecondTotalArray());
     }
 }

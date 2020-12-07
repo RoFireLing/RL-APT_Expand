@@ -39,23 +39,23 @@ public class RAPT {
 
     private void setBou_RAPT(String program_name, int[] punArray) {
         if (program_name.equals("Grep")) {
-            rew = new int[9];
-            pun = new int[9];
-            bou = new int[9];
+            rew = new int[3];
+            pun = new int[3];
+            bou = new int[3];
             for (int i = 0; i < punArray.length; i++) {
                 bou[i] = punArray[i];
             }
         } else if (program_name.equals("Gzip")) {
-            rew = new int[6];
-            pun = new int[6];
-            bou = new int[6];
+            rew = new int[4];
+            pun = new int[4];
+            bou = new int[4];
             for (int i = 0; i < punArray.length; i++) {
                 bou[i] = punArray[i];
             }
         } else if (program_name.equals("Make")) {
-            rew = new int[8];
-            pun = new int[8];
-            bou = new int[8];
+            rew = new int[4];
+            pun = new int[4];
+            bou = new int[4];
             for (int i = 0; i < punArray.length; i++) {
                 bou[i] = punArray[i];
             }
@@ -115,35 +115,53 @@ public class RAPT {
      */
     public void adjustRAPT(int formersourcePartitionIndex, boolean isKilledMutant) {
         double old_i = RAPT[formersourcePartitionIndex];
-
         if (isKilledMutant) {
-            double sum = 0;
-            for (int i = 0; i < RAPT.length; i++) {
-                if (i != formersourcePartitionIndex) {
-                    RAPT[i] -= (1 + Math.log(rew[formersourcePartitionIndex]))
-                            * RAPT_epsilon / (RAPT.length - 1);
-                    if (RAPT[i] < 0) {
-                        RAPT[i] = 0;
-                    }
-                }
-                sum += RAPT[i];
-            }
-            RAPT[formersourcePartitionIndex] = 1 - sum;
+//            double sum = 0;
+//            for (int i = 0; i < RAPT.length; i++) {
+//                if (i != formersourcePartitionIndex) {
+//                    RAPT[i] -= (1 + Math.log(rew[formersourcePartitionIndex]))
+//                            * RAPT_epsilon / (RAPT.length - 1);
+//                    if (RAPT[i] < 0) {
+//                        RAPT[i] = 0;
+//                    }
+//                }
+//                sum += RAPT[i];
+//            }
+//            RAPT[formersourcePartitionIndex] = 1 - sum;
+            rew[formersourcePartitionIndex]++;
+            pun[formersourcePartitionIndex] = 0;
         } else {
-            for (int i = 0; i < RAPT.length; i++) {
-                if (i == formersourcePartitionIndex) {
-                    if (old_i >= RAPT_delta) {
-                        RAPT[i] -= RAPT_delta;
+            pun[formersourcePartitionIndex]++;
+            if (rew[formersourcePartitionIndex] != 0) {
+                double sum = 0;
+                for (int i = 0; i < RAPT.length; i++) {
+                    if (i != formersourcePartitionIndex) {
+                        RAPT[i] -= (1 + Math.log(rew[formersourcePartitionIndex]))
+                                * RAPT_epsilon / (RAPT.length - 1);
+                        if (RAPT[i] < 0) {
+                            RAPT[i] = 0;
+                        }
                     }
-                    if (old_i < RAPT_delta || bou[i] == pun[i]) {
-                        RAPT[i] = 0;
-                    }
-                } else {
-                    if (old_i >= RAPT_delta) {
-                        RAPT[i] += RAPT_delta / (RAPT.length - 1);
-                    }
-                    if (old_i < RAPT_delta || bou[i] == pun[i]) {
-                        RAPT[i] += old_i / (RAPT.length - 1);
+                    sum += RAPT[i];
+                }
+                RAPT[formersourcePartitionIndex] = 1 - sum;
+                rew[formersourcePartitionIndex] = 0;
+            } else {
+                for (int i = 0; i < RAPT.length; i++) {
+                    if (i == formersourcePartitionIndex) {
+                        if (old_i >= RAPT_delta) {
+                            RAPT[i] -= RAPT_delta;
+                        }
+                        if (old_i < RAPT_delta || bou[i] == pun[i]) {
+                            RAPT[i] = 0;
+                        }
+                    } else {
+                        if (old_i >= RAPT_delta) {
+                            RAPT[i] += RAPT_delta / (RAPT.length - 1);
+                        }
+                        if (old_i < RAPT_delta || bou[i] == pun[i]) {
+                            RAPT[i] += old_i / (RAPT.length - 1);
+                        }
                     }
                 }
             }
@@ -153,22 +171,22 @@ public class RAPT {
 
     public void setParameters4RAPT(String program_name, String version) {
         if (program_name.equals("Grep")) {
-            if (version.equals("v1")) setRAPT_delta(4.0017852457362E-4);
-            else if (version.equals("v2")) setRAPT_delta(0);
-            else if (version.equals("v3")) setRAPT_delta(0);
-            else if (version.equals("v4")) setRAPT_delta(0);
+            if (version.equals("v1")) setRAPT_delta(4.0947992100065836E-4);
+            else if (version.equals("v2")) setRAPT_delta(0.004809574186723089);
+            else if (version.equals("v3")) setRAPT_delta(0.001879574970484061);
+            else if (version.equals("v4")) setRAPT_delta(2.2430256506272232E-4);
             else setRAPT_delta(0);
             setBou_RAPT(program_name, pun4Grep);
         } else if (program_name.equals("Gzip")) {
-            if (version.equals("v1")) setRAPT_delta(0);
-            else if (version.equals("v2")) setRAPT_delta(0);
-            else if (version.equals("v4")) setRAPT_delta(0);
-            else if (version.equals("v5")) setRAPT_delta(0);
+            if (version.equals("v1")) setRAPT_delta(0.12250000000000001);
+            else if (version.equals("v2")) setRAPT_delta(0.0027368421052631586);
+            else if (version.equals("v4")) setRAPT_delta(0.010049504950495051);
+            else if (version.equals("v5")) setRAPT_delta(0.12009950248756222);
             else setRAPT_delta(0);
             setBou_RAPT(program_name, pun4Gzip);
         } else if (program_name.equals("Make")) {
-            if (version.equals("v1")) setRAPT_delta(0);
-            else if (version.equals("v2")) setRAPT_delta(0);
+            if (version.equals("v1")) setRAPT_delta(0.0015311004784688996);
+            else if (version.equals("v2")) setRAPT_delta(3.7209302325581393E-4);
             else setRAPT_delta(0);
             setBou_RAPT(program_name, pun4Make);
         }

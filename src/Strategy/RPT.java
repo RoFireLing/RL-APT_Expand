@@ -10,7 +10,7 @@ public class RPT {
     /**
      * the test profile of RPT
      */
-    private double[][] RPT;
+    private double[] RPT;
 
     /**
      * initialize the test profile of RPT
@@ -18,11 +18,9 @@ public class RPT {
      * @param numberOfPartitions the number of partitions
      */
     public void initializeRPT(int numberOfPartitions) {
-        RPT = new double[numberOfPartitions][numberOfPartitions];
+        RPT = new double[numberOfPartitions];
         for (int i = 0; i < numberOfPartitions; i++) {
-            for (int j = 0; j < numberOfPartitions; j++) {
-                RPT[i][j] = 1.0 / numberOfPartitions;
-            }
+            RPT[i] = 1.0 / numberOfPartitions;
         }
     }
 
@@ -32,11 +30,8 @@ public class RPT {
      *
      * @return the index
      */
-    public int nextPartition4RPT(int formerPartitionNumber) {
-        double[] tempArray = new double[RPT.length];
-        for (int i = 0; i < tempArray.length; i++) {
-            tempArray[i] = RPT[formerPartitionNumber][i];
-        }
+    public int nextPartition4RPT() {
+        double[] tempArray = RPT;
         int index = -1;
         double randomNumber = new Random().nextDouble();
         double sum = 0;

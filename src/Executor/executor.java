@@ -27,42 +27,42 @@ public class executor {
      */
     public static void main(String[] args) {
         genearate_testseq();
-        String program_name = "Grep";
-        String version = "v1";
+        String program_name = "Make";
+        String version = "v2";
 
         // Design Pattern-Factory Pattern
-        test_factory tcf = new test_factory();
-        String[] strategy = {"RPT", "DRT", "MAPT", "RAPT", "RLAPT_Q", "RLAPT_S"};
-        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
-            for (String s : strategy) {
-                test executor = tcf.getTest(s);
-                executor.executeTestCase(program_name, version, repeatTime);
-            }
-        }
+//        test_factory tcf = new test_factory();
+//        String[] strategy = {"RPT", "DRT", "MAPT", "RAPT", "RLAPT_Q", "RLAPT_S"};
+//        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
+//            for (String s : strategy) {
+//                test executor = tcf.getTest(s);
+//                executor.executeTestCase(program_name, version, repeatTime);
+//            }
+//        }
 
-//        rlapt_q qtest = new rlapt_q();
-//        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
-//            qtest.executeTestCase(program_name, version, repeatTime);
-//        }
-//        rlapt_s stest = new rlapt_s();
-//        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
-//            stest.executeTestCase(program_name, version, repeatTime);
-//        }
-//        mapt mtest = new mapt();
-//        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
-//            mtest.executeTestCase(program_name, version, repeatTime);
-//        }
-//        rapt rtest = new rapt();
-//        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
-//            rtest.executeTestCase(program_name, version, repeatTime);
-//        }
-//        drt dtest = new drt();
-//        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
-//            dtest.executeTestCase(program_name, version, repeatTime);
-//        }
-//        rpt rptest = new rpt();
-//        for (int repeatTime = 0; repeatTime < 10; repeatTime++) {
-//            rptest.executeTestCase(program_name, version, repeatTime);
-//        }
+        rlapt_q qtest = new rlapt_q();
+        for (int repeatTime = 0; repeatTime < 100; repeatTime++) {
+            qtest.executeTestCase(program_name, version, repeatTime);
+        }
+        rlapt_s stest = new rlapt_s();
+        for (int repeatTime = 0; repeatTime < 100; repeatTime++) {
+            stest.executeTestCase(program_name, version, repeatTime);
+        }
+        mapt mtest = new mapt();
+        for (int repeatTime = 0; repeatTime < 50; repeatTime++) {
+            mtest.executeTestCase(program_name, version, repeatTime);
+        }
+        rapt rtest = new rapt();
+        for (int repeatTime = 0; repeatTime < 200; repeatTime++) {
+            rtest.executeTestCase(program_name, version, repeatTime);
+        }
+        drt dtest = new drt();
+        for (int repeatTime = 0; repeatTime < 50; repeatTime++) {
+            dtest.executeTestCase(program_name, version, repeatTime);
+        }
+        rpt rptest = new rpt();
+        for (int repeatTime = 0; repeatTime < 50; repeatTime++) {
+            rptest.executeTestCase(program_name, version, repeatTime);
+        }
     }
 }

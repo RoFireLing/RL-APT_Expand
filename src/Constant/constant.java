@@ -16,7 +16,7 @@ public class constant {
      * The number of test cases generated
      * the length of the test sequence
      */
-    public static final int testcasenum = 500000;
+    public static final int testcasenum = 1000000;
     /**
      * The number of partitions
      */
@@ -78,6 +78,7 @@ public class constant {
     public static final String make_fm_v1_path = System.getProperty("user.dir") + separator + "src" + separator + "Program_Info" + separator + "Make" + separator + "make_fm_v1.txt";
     public static final String make_fm_v2_path = System.getProperty("user.dir") + separator + "src" + separator + "Program_Info" + separator + "Make" + separator + "make_fm_v2.txt";
     public static final String result_path = System.getProperty("user.dir") + separator + "src" + separator + "Result";
+    public static final String param_result_path = System.getProperty("user.dir") + separator + "src" + separator + "Result_Parameter";
     /**
      * test sequence
      */

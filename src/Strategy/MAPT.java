@@ -58,10 +58,7 @@ public class MAPT {
      * @param isKilledMutans
      */
     public void adjustMAPT(int formerSourcePartitionIndex, boolean isKilledMutans) {
-        //the source test case and follow-up test case belong to the same partition
         double old_i = MAPT[formerSourcePartitionIndex][formerSourcePartitionIndex];
-
-
         // the test case killed a mutant
         if (isKilledMutans) { //same partition and killed a mutant
             double sum = 0;
@@ -75,7 +72,8 @@ public class MAPT {
                 sum += MAPT[formerSourcePartitionIndex][i];
             }
             MAPT[formerSourcePartitionIndex][formerSourcePartitionIndex] = 1 - sum;
-        } else { // same partition and do not kill a mutant
+        } else {
+            //do not kill a mutant
             double threshod = MAPT_tau * (1 - old_i) / (MAPT.length - 1);
             for (int i = 0; i < MAPT.length; i++) {
                 if (i != formerSourcePartitionIndex) {
