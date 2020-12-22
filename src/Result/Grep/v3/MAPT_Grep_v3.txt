@@ -1,0 +1,600 @@
+id: 0
+Fmeasure: 67.0;F2measure: 191.0
+Tmeasure: 60203.33;T2measure: 104383.33
+id: 1
+Fmeasure: 86.0;F2measure: 168.0
+Tmeasure: 28980.0;T2measure: 36876.66
+id: 2
+Fmeasure: 72.0;F2measure: 197.0
+Tmeasure: 31536.660000000003;T2measure: 76256.66
+id: 3
+Fmeasure: 58.0;F2measure: 124.0
+Tmeasure: 25836.67;T2measure: 45970.0
+id: 4
+Fmeasure: 66.0;F2measure: 161.0
+Tmeasure: 25790.0;T2measure: 55483.33
+id: 5
+Fmeasure: 77.0;F2measure: 108.0
+Tmeasure: 32616.660000000003;T2measure: 39906.67
+id: 6
+Fmeasure: 85.0;F2measure: 164.0
+Tmeasure: 40886.67;T2measure: 64803.33
+id: 7
+Fmeasure: 58.0;F2measure: 157.0
+Tmeasure: 23170.0;T2measure: 49196.67
+id: 8
+Fmeasure: 69.0;F2measure: 132.0
+Tmeasure: 31223.33;T2measure: 50003.34
+id: 9
+Fmeasure: 47.0;F2measure: 167.0
+Tmeasure: 20726.67;T2measure: 62676.67
+id: 10
+Fmeasure: 58.0;F2measure: 139.0
+Tmeasure: 25473.339999999997;T2measure: 53666.67
+id: 11
+Fmeasure: 41.0;F2measure: 154.0
+Tmeasure: 18570.0;T2measure: 57816.67
+id: 12
+Fmeasure: 73.0;F2measure: 157.0
+Tmeasure: 31120.0;T2measure: 57733.33
+id: 13
+Fmeasure: 113.0;F2measure: 189.0
+Tmeasure: 44200.0;T2measure: 68780.0
+id: 14
+Fmeasure: 62.0;F2measure: 182.0
+Tmeasure: 27140.0;T2measure: 65280.0
+id: 15
+Fmeasure: 53.0;F2measure: 137.0
+Tmeasure: 23660.0;T2measure: 55436.67
+id: 16
+Fmeasure: 93.0;F2measure: 186.0
+Tmeasure: 36133.33;T2measure: 64303.33
+id: 17
+Fmeasure: 51.0;F2measure: 205.0
+Tmeasure: 21593.33;T2measure: 73170.0
+id: 18
+Fmeasure: 69.0;F2measure: 185.0
+Tmeasure: 31460.0;T2measure: 67406.67
+id: 19
+Fmeasure: 71.0;F2measure: 148.0
+Tmeasure: 31880.0;T2measure: 53450.0
+id: 20
+Fmeasure: 66.0;F2measure: 158.0
+Tmeasure: 28036.67;T2measure: 55636.67
+id: 21
+Fmeasure: 80.0;F2measure: 146.0
+Tmeasure: 32956.67;T2measure: 55356.66
+id: 22
+Fmeasure: 88.0;F2measure: 168.0
+Tmeasure: 35196.67;T2measure: 61056.67
+id: 23
+Fmeasure: 55.0;F2measure: 152.0
+Tmeasure: 24773.33;T2measure: 57483.33
+id: 24
+Fmeasure: 66.0;F2measure: 143.0
+Tmeasure: 36156.67;T2measure: 53990.0
+id: 25
+Fmeasure: 40.0;F2measure: 174.0
+Tmeasure: 18220.0;T2measure: 67263.33
+id: 26
+Fmeasure: 82.0;F2measure: 189.0
+Tmeasure: 32760.0;T2measure: 70303.34
+id: 27
+Fmeasure: 62.0;F2measure: 162.0
+Tmeasure: 25380.0;T2measure: 58006.66
+id: 28
+Fmeasure: 71.0;F2measure: 191.0
+Tmeasure: 29270.0;T2measure: 77333.33
+id: 29
+Fmeasure: 59.0;F2measure: 163.0
+Tmeasure: 21960.0;T2measure: 52740.0
+id: 30
+Fmeasure: 64.0;F2measure: 224.0
+Tmeasure: 31946.660000000003;T2measure: 75003.33
+id: 31
+Fmeasure: 58.0;F2measure: 161.0
+Tmeasure: 26646.660000000003;T2measure: 56323.34
+id: 32
+Fmeasure: 70.0;F2measure: 157.0
+Tmeasure: 33243.33;T2measure: 62250.0
+id: 33
+Fmeasure: 61.0;F2measure: 132.0
+Tmeasure: 26073.33;T2measure: 52010.0
+id: 34
+Fmeasure: 45.0;F2measure: 151.0
+Tmeasure: 20460.0;T2measure: 55140.0
+id: 35
+Fmeasure: 52.0;F2measure: 138.0
+Tmeasure: 23240.0;T2measure: 52196.67
+id: 36
+Fmeasure: 39.0;F2measure: 147.0
+Tmeasure: 18040.0;T2measure: 53723.33
+id: 37
+Fmeasure: 58.0;F2measure: 169.0
+Tmeasure: 27910.0;T2measure: 75443.34
+id: 38
+Fmeasure: 79.0;F2measure: 167.0
+Tmeasure: 35890.0;T2measure: 65006.67
+id: 39
+Fmeasure: 76.0;F2measure: 130.0
+Tmeasure: 31506.660000000003;T2measure: 48290.0
+id: 40
+Fmeasure: 67.0;F2measure: 114.0
+Tmeasure: 29880.0;T2measure: 42940.0
+id: 41
+Fmeasure: 56.0;F2measure: 165.0
+Tmeasure: 24816.660000000003;T2measure: 61576.67
+id: 42
+Fmeasure: 92.0;F2measure: 166.0
+Tmeasure: 44926.66;T2measure: 69560.0
+id: 43
+Fmeasure: 56.0;F2measure: 185.0
+Tmeasure: 23056.660000000003;T2measure: 66343.34
+id: 44
+Fmeasure: 56.0;F2measure: 167.0
+Tmeasure: 25096.67;T2measure: 75403.34
+id: 45
+Fmeasure: 80.0;F2measure: 182.0
+Tmeasure: 33836.67;T2measure: 92106.66
+id: 46
+Fmeasure: 79.0;F2measure: 244.0
+Tmeasure: 44603.34;T2measure: 93790.0
+id: 47
+Fmeasure: 65.0;F2measure: 147.0
+Tmeasure: 27476.660000000003;T2measure: 58693.33
+id: 48
+Fmeasure: 52.0;F2measure: 223.0
+Tmeasure: 23273.33;T2measure: 94160.0
+id: 49
+Fmeasure: 50.0;F2measure: 158.0
+Tmeasure: 22876.660000000003;T2measure: 60930.0
+id: 50
+Fmeasure: 59.0;F2measure: 155.0
+Tmeasure: 24816.67;T2measure: 62023.33
+id: 51
+Fmeasure: 55.0;F2measure: 151.0
+Tmeasure: 27993.33;T2measure: 64626.67
+id: 52
+Fmeasure: 41.0;F2measure: 157.0
+Tmeasure: 18470.0;T2measure: 59130.0
+id: 53
+Fmeasure: 73.0;F2measure: 144.0
+Tmeasure: 30003.33;T2measure: 49533.33
+id: 54
+Fmeasure: 61.0;F2measure: 158.0
+Tmeasure: 26096.67;T2measure: 60443.33
+id: 55
+Fmeasure: 64.0;F2measure: 181.0
+Tmeasure: 28526.660000000003;T2measure: 72583.33
+id: 56
+Fmeasure: 61.0;F2measure: 196.0
+Tmeasure: 24053.33;T2measure: 65236.67
+id: 57
+Fmeasure: 62.0;F2measure: 156.0
+Tmeasure: 26193.33;T2measure: 56480.0
+id: 58
+Fmeasure: 71.0;F2measure: 177.0
+Tmeasure: 35060.0;T2measure: 72710.0
+id: 59
+Fmeasure: 68.0;F2measure: 143.0
+Tmeasure: 28373.339999999997;T2measure: 51860.0
+id: 60
+Fmeasure: 67.0;F2measure: 145.0
+Tmeasure: 29176.67;T2measure: 56653.33
+id: 61
+Fmeasure: 48.0;F2measure: 178.0
+Tmeasure: 23976.67;T2measure: 68126.66
+id: 62
+Fmeasure: 70.0;F2measure: 167.0
+Tmeasure: 30466.660000000003;T2measure: 73806.67
+id: 63
+Fmeasure: 78.0;F2measure: 165.0
+Tmeasure: 35606.66;T2measure: 65186.66
+id: 64
+Fmeasure: 78.0;F2measure: 181.0
+Tmeasure: 32250.0;T2measure: 64550.0
+id: 65
+Fmeasure: 76.0;F2measure: 162.0
+Tmeasure: 32253.33;T2measure: 65736.66
+id: 66
+Fmeasure: 54.0;F2measure: 136.0
+Tmeasure: 27566.660000000003;T2measure: 56473.34
+id: 67
+Fmeasure: 42.0;F2measure: 153.0
+Tmeasure: 20223.34;T2measure: 58376.66
+id: 68
+Fmeasure: 68.0;F2measure: 164.0
+Tmeasure: 28696.67;T2measure: 58910.0
+id: 69
+Fmeasure: 72.0;F2measure: 171.0
+Tmeasure: 29680.0;T2measure: 60486.67
+id: 70
+Fmeasure: 77.0;F2measure: 163.0
+Tmeasure: 30726.660000000003;T2measure: 59490.0
+id: 71
+Fmeasure: 106.0;F2measure: 206.0
+Tmeasure: 43840.0;T2measure: 83553.33
+id: 72
+Fmeasure: 56.0;F2measure: 195.0
+Tmeasure: 20903.34;T2measure: 60946.67
+id: 73
+Fmeasure: 68.0;F2measure: 207.0
+Tmeasure: 28280.0;T2measure: 74633.33
+id: 74
+Fmeasure: 66.0;F2measure: 140.0
+Tmeasure: 31846.660000000003;T2measure: 58720.0
+id: 75
+Fmeasure: 66.0;F2measure: 146.0
+Tmeasure: 30106.660000000003;T2measure: 59123.34
+id: 76
+Fmeasure: 42.0;F2measure: 176.0
+Tmeasure: 21480.0;T2measure: 71520.0
+id: 77
+Fmeasure: 70.0;F2measure: 120.0
+Tmeasure: 29876.67;T2measure: 44063.34
+id: 78
+Fmeasure: 72.0;F2measure: 170.0
+Tmeasure: 27093.33;T2measure: 59980.0
+id: 79
+Fmeasure: 72.0;F2measure: 145.0
+Tmeasure: 26783.339999999997;T2measure: 47753.33
+id: 80
+Fmeasure: 55.0;F2measure: 165.0
+Tmeasure: 21016.67;T2measure: 53593.33
+id: 81
+Fmeasure: 90.0;F2measure: 141.0
+Tmeasure: 25540.0;T2measure: 34393.33
+id: 82
+Fmeasure: 62.0;F2measure: 151.0
+Tmeasure: 17686.66;T2measure: 34926.67
+id: 83
+Fmeasure: 68.0;F2measure: 173.0
+Tmeasure: 28283.33;T2measure: 62983.34
+id: 84
+Fmeasure: 54.0;F2measure: 154.0
+Tmeasure: 22983.33;T2measure: 54646.67
+id: 85
+Fmeasure: 71.0;F2measure: 149.0
+Tmeasure: 29263.339999999997;T2measure: 54630.0
+id: 86
+Fmeasure: 78.0;F2measure: 176.0
+Tmeasure: 37370.0;T2measure: 70060.0
+id: 87
+Fmeasure: 81.0;F2measure: 176.0
+Tmeasure: 35676.67;T2measure: 63523.34
+id: 88
+Fmeasure: 51.0;F2measure: 161.0
+Tmeasure: 22560.0;T2measure: 60273.33
+id: 89
+Fmeasure: 72.0;F2measure: 175.0
+Tmeasure: 31523.339999999997;T2measure: 63883.33
+id: 90
+Fmeasure: 59.0;F2measure: 187.0
+Tmeasure: 25010.0;T2measure: 66253.33
+id: 91
+Fmeasure: 52.0;F2measure: 166.0
+Tmeasure: 23140.0;T2measure: 62366.66
+id: 92
+Fmeasure: 73.0;F2measure: 124.0
+Tmeasure: 32876.66;T2measure: 45120.0
+id: 93
+Fmeasure: 63.0;F2measure: 198.0
+Tmeasure: 26386.660000000003;T2measure: 70916.67
+id: 94
+Fmeasure: 61.0;F2measure: 157.0
+Tmeasure: 28316.67;T2measure: 62373.34
+id: 95
+Fmeasure: 77.0;F2measure: 167.0
+Tmeasure: 32453.33;T2measure: 63986.67
+id: 96
+Fmeasure: 101.0;F2measure: 162.0
+Tmeasure: 41876.66;T2measure: 60646.66
+id: 97
+Fmeasure: 95.0;F2measure: 205.0
+Tmeasure: 32703.33;T2measure: 62733.33
+id: 98
+Fmeasure: 81.0;F2measure: 159.0
+Tmeasure: 32213.33;T2measure: 56550.0
+id: 99
+Fmeasure: 69.0;F2measure: 156.0
+Tmeasure: 28833.33;T2measure: 60450.0
+id: 100
+Fmeasure: 94.0;F2measure: 189.0
+Tmeasure: 37040.0;T2measure: 66586.66
+id: 101
+Fmeasure: 78.0;F2measure: 134.0
+Tmeasure: 33503.34;T2measure: 50946.66
+id: 102
+Fmeasure: 67.0;F2measure: 196.0
+Tmeasure: 37330.0;T2measure: 93163.33
+id: 103
+Fmeasure: 67.0;F2measure: 140.0
+Tmeasure: 62663.33;T2measure: 55800.0
+id: 104
+Fmeasure: 69.0;F2measure: 149.0
+Tmeasure: 23456.660000000003;T2measure: 52690.0
+id: 105
+Fmeasure: 59.0;F2measure: 197.0
+Tmeasure: 37086.67;T2measure: 58346.67
+id: 106
+Fmeasure: 56.0;F2measure: 199.0
+Tmeasure: 15110.0;T2measure: 46093.34
+id: 107
+Fmeasure: 69.0;F2measure: 188.0
+Tmeasure: 29670.0;T2measure: 69096.66
+id: 108
+Fmeasure: 99.0;F2measure: 144.0
+Tmeasure: 42720.0;T2measure: 56053.33
+id: 109
+Fmeasure: 85.0;F2measure: 117.0
+Tmeasure: 37280.0;T2measure: 50703.33
+id: 110
+Fmeasure: 93.0;F2measure: 161.0
+Tmeasure: 37806.67;T2measure: 60223.33
+id: 111
+Fmeasure: 79.0;F2measure: 163.0
+Tmeasure: 31606.67;T2measure: 58043.34
+id: 112
+Fmeasure: 78.0;F2measure: 154.0
+Tmeasure: 30940.0;T2measure: 53330.0
+id: 113
+Fmeasure: 60.0;F2measure: 153.0
+Tmeasure: 25896.67;T2measure: 57426.67
+id: 114
+Fmeasure: 96.0;F2measure: 173.0
+Tmeasure: 38876.67;T2measure: 63540.0
+id: 115
+Fmeasure: 49.0;F2measure: 204.0
+Tmeasure: 21346.67;T2measure: 74483.33
+id: 116
+Fmeasure: 69.0;F2measure: 140.0
+Tmeasure: 29676.67;T2measure: 51993.33
+id: 117
+Fmeasure: 60.0;F2measure: 162.0
+Tmeasure: 26513.33;T2measure: 60076.67
+id: 118
+Fmeasure: 79.0;F2measure: 162.0
+Tmeasure: 32890.0;T2measure: 59833.34
+id: 119
+Fmeasure: 93.0;F2measure: 151.0
+Tmeasure: 40610.0;T2measure: 55146.67
+id: 120
+Fmeasure: 76.0;F2measure: 141.0
+Tmeasure: 30403.33;T2measure: 52056.67
+id: 121
+Fmeasure: 55.0;F2measure: 177.0
+Tmeasure: 23720.0;T2measure: 71376.67
+id: 122
+Fmeasure: 68.0;F2measure: 143.0
+Tmeasure: 29140.0;T2measure: 52340.0
+id: 123
+Fmeasure: 73.0;F2measure: 123.0
+Tmeasure: 29863.33;T2measure: 44160.0
+id: 124
+Fmeasure: 63.0;F2measure: 194.0
+Tmeasure: 35570.0;T2measure: 71413.34
+id: 125
+Fmeasure: 62.0;F2measure: 186.0
+Tmeasure: 27286.660000000003;T2measure: 73963.33
+id: 126
+Fmeasure: 66.0;F2measure: 181.0
+Tmeasure: 27446.67;T2measure: 67606.67
+id: 127
+Fmeasure: 45.0;F2measure: 123.0
+Tmeasure: 19833.34;T2measure: 47070.0
+id: 128
+Fmeasure: 66.0;F2measure: 146.0
+Tmeasure: 30690.0;T2measure: 53336.66
+id: 129
+Fmeasure: 57.0;F2measure: 205.0
+Tmeasure: 25333.339999999997;T2measure: 81576.66
+id: 130
+Fmeasure: 55.0;F2measure: 194.0
+Tmeasure: 28030.0;T2measure: 73220.0
+id: 131
+Fmeasure: 102.0;F2measure: 172.0
+Tmeasure: 44673.33;T2measure: 62916.66
+id: 132
+Fmeasure: 58.0;F2measure: 176.0
+Tmeasure: 25050.0;T2measure: 62520.0
+id: 133
+Fmeasure: 73.0;F2measure: 126.0
+Tmeasure: 33640.0;T2measure: 50270.0
+id: 134
+Fmeasure: 69.0;F2measure: 153.0
+Tmeasure: 29053.33;T2measure: 56793.33
+id: 135
+Fmeasure: 71.0;F2measure: 132.0
+Tmeasure: 30680.0;T2measure: 51743.33
+id: 136
+Fmeasure: 51.0;F2measure: 197.0
+Tmeasure: 23466.660000000003;T2measure: 78333.33
+id: 137
+Fmeasure: 54.0;F2measure: 143.0
+Tmeasure: 25673.33;T2measure: 57463.33
+id: 138
+Fmeasure: 55.0;F2measure: 188.0
+Tmeasure: 26790.0;T2measure: 74223.33
+id: 139
+Fmeasure: 80.0;F2measure: 200.0
+Tmeasure: 35886.67;T2measure: 73600.0
+id: 140
+Fmeasure: 64.0;F2measure: 219.0
+Tmeasure: 26913.339999999997;T2measure: 78313.33
+id: 141
+Fmeasure: 66.0;F2measure: 139.0
+Tmeasure: 30656.67;T2measure: 52476.66
+id: 142
+Fmeasure: 71.0;F2measure: 221.0
+Tmeasure: 28640.0;T2measure: 77723.33
+id: 143
+Fmeasure: 51.0;F2measure: 154.0
+Tmeasure: 22736.660000000003;T2measure: 56706.67
+id: 144
+Fmeasure: 56.0;F2measure: 154.0
+Tmeasure: 27406.67;T2measure: 58876.67
+id: 145
+Fmeasure: 67.0;F2measure: 162.0
+Tmeasure: 28746.660000000003;T2measure: 58486.67
+id: 146
+Fmeasure: 53.0;F2measure: 124.0
+Tmeasure: 26410.0;T2measure: 48636.66
+id: 147
+Fmeasure: 53.0;F2measure: 156.0
+Tmeasure: 23006.67;T2measure: 56483.34
+id: 148
+Fmeasure: 60.0;F2measure: 183.0
+Tmeasure: 26993.33;T2measure: 66640.0
+id: 149
+Fmeasure: 66.0;F2measure: 157.0
+Tmeasure: 29350.0;T2measure: 58583.33
+id: 150
+Fmeasure: 86.0;F2measure: 181.0
+Tmeasure: 33630.0;T2measure: 63623.33
+id: 151
+Fmeasure: 77.0;F2measure: 132.0
+Tmeasure: 31473.33;T2measure: 50936.66
+id: 152
+Fmeasure: 62.0;F2measure: 131.0
+Tmeasure: 30586.660000000003;T2measure: 60300.0
+id: 153
+Fmeasure: 70.0;F2measure: 202.0
+Tmeasure: 32190.0;T2measure: 76646.67
+id: 154
+Fmeasure: 85.0;F2measure: 144.0
+Tmeasure: 43496.66;T2measure: 63810.0
+id: 155
+Fmeasure: 71.0;F2measure: 165.0
+Tmeasure: 29890.0;T2measure: 60230.0
+id: 156
+Fmeasure: 77.0;F2measure: 226.0
+Tmeasure: 31650.0;T2measure: 86490.0
+id: 157
+Fmeasure: 76.0;F2measure: 154.0
+Tmeasure: 33850.0;T2measure: 59593.33
+id: 158
+Fmeasure: 54.0;F2measure: 112.0
+Tmeasure: 24416.67;T2measure: 41470.0
+id: 159
+Fmeasure: 79.0;F2measure: 188.0
+Tmeasure: 33100.0;T2measure: 69560.0
+id: 160
+Fmeasure: 68.0;F2measure: 150.0
+Tmeasure: 27926.67;T2measure: 55546.66
+id: 161
+Fmeasure: 66.0;F2measure: 168.0
+Tmeasure: 28870.0;T2measure: 64693.33
+id: 162
+Fmeasure: 47.0;F2measure: 176.0
+Tmeasure: 23570.0;T2measure: 71276.66
+id: 163
+Fmeasure: 62.0;F2measure: 190.0
+Tmeasure: 27336.67;T2measure: 74290.0
+id: 164
+Fmeasure: 62.0;F2measure: 179.0
+Tmeasure: 26880.0;T2measure: 67320.0
+id: 165
+Fmeasure: 74.0;F2measure: 182.0
+Tmeasure: 33133.33;T2measure: 76080.0
+id: 166
+Fmeasure: 56.0;F2measure: 184.0
+Tmeasure: 27053.339999999997;T2measure: 69833.34
+id: 167
+Fmeasure: 63.0;F2measure: 123.0
+Tmeasure: 26543.339999999997;T2measure: 47153.33
+id: 168
+Fmeasure: 103.0;F2measure: 172.0
+Tmeasure: 45146.67;T2measure: 61593.33
+id: 169
+Fmeasure: 66.0;F2measure: 155.0
+Tmeasure: 29026.67;T2measure: 57900.0
+id: 170
+Fmeasure: 78.0;F2measure: 197.0
+Tmeasure: 30646.660000000003;T2measure: 70970.0
+id: 171
+Fmeasure: 50.0;F2measure: 205.0
+Tmeasure: 23666.660000000003;T2measure: 79060.0
+id: 172
+Fmeasure: 64.0;F2measure: 161.0
+Tmeasure: 27023.33;T2measure: 59680.0
+id: 173
+Fmeasure: 90.0;F2measure: 153.0
+Tmeasure: 39356.67;T2measure: 65346.67
+id: 174
+Fmeasure: 71.0;F2measure: 166.0
+Tmeasure: 29363.33;T2measure: 62133.33
+id: 175
+Fmeasure: 50.0;F2measure: 165.0
+Tmeasure: 23120.0;T2measure: 68043.33
+id: 176
+Fmeasure: 59.0;F2measure: 180.0
+Tmeasure: 27026.67;T2measure: 78456.66
+id: 177
+Fmeasure: 62.0;F2measure: 161.0
+Tmeasure: 34560.0;T2measure: 65903.34
+id: 178
+Fmeasure: 68.0;F2measure: 133.0
+Tmeasure: 27016.67;T2measure: 46626.67
+id: 179
+Fmeasure: 56.0;F2measure: 140.0
+Tmeasure: 23603.339999999997;T2measure: 54960.0
+id: 180
+Fmeasure: 66.0;F2measure: 170.0
+Tmeasure: 26563.33;T2measure: 60383.33
+id: 181
+Fmeasure: 66.0;F2measure: 126.0
+Tmeasure: 28190.0;T2measure: 45300.0
+id: 182
+Fmeasure: 54.0;F2measure: 128.0
+Tmeasure: 25160.0;T2measure: 48220.0
+id: 183
+Fmeasure: 44.0;F2measure: 164.0
+Tmeasure: 19333.33;T2measure: 68796.67
+id: 184
+Fmeasure: 33.0;F2measure: 144.0
+Tmeasure: 16046.67;T2measure: 54473.33
+id: 185
+Fmeasure: 49.0;F2measure: 143.0
+Tmeasure: 22086.66;T2measure: 53446.67
+id: 186
+Fmeasure: 78.0;F2measure: 170.0
+Tmeasure: 33210.0;T2measure: 63640.0
+id: 187
+Fmeasure: 51.0;F2measure: 169.0
+Tmeasure: 24700.0;T2measure: 73816.66
+id: 188
+Fmeasure: 72.0;F2measure: 139.0
+Tmeasure: 29460.0;T2measure: 48610.0
+id: 189
+Fmeasure: 75.0;F2measure: 180.0
+Tmeasure: 35073.33;T2measure: 67193.34
+id: 190
+Fmeasure: 67.0;F2measure: 161.0
+Tmeasure: 28933.33;T2measure: 60403.33
+id: 191
+Fmeasure: 70.0;F2measure: 194.0
+Tmeasure: 29180.0;T2measure: 70220.0
+id: 192
+Fmeasure: 69.0;F2measure: 136.0
+Tmeasure: 30433.33;T2measure: 52560.0
+id: 193
+Fmeasure: 68.0;F2measure: 163.0
+Tmeasure: 29260.0;T2measure: 65130.0
+id: 194
+Fmeasure: 53.0;F2measure: 149.0
+Tmeasure: 24086.67;T2measure: 56723.33
+id: 195
+Fmeasure: 52.0;F2measure: 221.0
+Tmeasure: 22766.660000000003;T2measure: 80066.67
+id: 196
+Fmeasure: 88.0;F2measure: 210.0
+Tmeasure: 37640.0;T2measure: 84483.33
+id: 197
+Fmeasure: 98.0;F2measure: 171.0
+Tmeasure: 39526.67;T2measure: 61510.0
+id: 198
+Fmeasure: 56.0;F2measure: 181.0
+Tmeasure: 24696.67;T2measure: 69913.34
+id: 199
+Fmeasure: 84.0;F2measure: 157.0
+Tmeasure: 32876.67;T2measure: 55420.0

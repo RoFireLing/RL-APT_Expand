@@ -42,7 +42,7 @@ public class constant {
     public static final int grep_v2_mutant_num = 2;
     public static final int grep_v3_mutant_num = 2;
     public static final int grep_v4_mutant_num = 1;
-    public static final int gzip_v1_mutant_num = 3;
+    public static final int gzip_v1_mutant_num = 2;
     public static final int gzip_v2_mutant_num = 1;
     public static final int gzip_v4_mutant_num = 2;
     public static final int gzip_v5_mutant_num = 3;
@@ -55,7 +55,7 @@ public class constant {
     public static final int[] grep_v2_mutant = {1, 6};
     public static final int[] grep_v3_mutant = {1, 18};
     public static final int[] grep_v4_mutant = {2};
-    public static final int[] gzip_v1_mutant = {2, 13, 14};
+    public static final int[] gzip_v1_mutant = {2, 14};
     public static final int[] gzip_v2_mutant = {3};
     public static final int[] gzip_v4_mutant = {1, 10};
     public static final int[] gzip_v5_mutant = {7, 9, 13};

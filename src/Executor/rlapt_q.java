@@ -151,7 +151,7 @@ public class rlapt_q implements test {
                     onceTimeRecord.secondExecutingTime(end2 - start2);
                 }
             }
-            if (constant.get_mutant_num(program_name, version) == 1 || onceMeasureRecord.getF2measure() != 0) {
+            if ((constant.get_mutant_num(program_name, version) == 1 && onceMeasureRecord.getFmeasure() != 0) || onceMeasureRecord.getF2measure() != 0) {
                 measureRecorder.addFMeasure(onceMeasureRecord.getFmeasure());
                 measureRecorder.addF2Measure(onceMeasureRecord.getF2measure());
 
